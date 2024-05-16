@@ -32,28 +32,6 @@ def start(binary):
     else:
         return process(binary)
 
-def create(p, size, value):
-    ru(p,b"")
-    sl(p,b"%i" % size)
-    ru(p,b"")
-    sl(value)
-
-def edit(p, index, value):
-    ru(p,b"")
-    sl(p,"%i" % index)
-    ru(p,b"")
-    sl(p,value)
-
-def delete(p, index):
-    ru(p,b"")
-    sl(p,"%i" % index)
-
-def view(p, index):
-    ru(p,b"")
-    sl(p,"%i" % index)
-    ru(p,b"")
-    return rl(p)
-    
 
 def exploit(p,e,r):
 
