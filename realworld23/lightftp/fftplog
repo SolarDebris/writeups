@@ -1,0 +1,17 @@
+06-01-2023 13:42:45 : 220 LightFTP server ready
+
+06-01-2023 13:42:55 : 220 LightFTP server ready
+
+06-01-2023 13:43:24 : 220 LightFTP server ready
+
+06-01-2023 13:43:59 : 220 LightFTP server ready
+
+06-01-2023 13:44:51 : 220 LightFTP server ready
+
+06-01-2023 13:45:46 S-id=1 : <- New user IP=127.0.0.1:38588
+06-01-2023 13:45:48 S-id=1 :  User disconnected. 
+==== Session 1 statistics ====
+Rx: 0 bytes (0.000000 MBytes) total received by server in 0 files,
+Tx: 0 bytes (0.000000 MBytes) total sent to the client in 0 files.
+
+06-01-2023 13:45:58 S-id=2 : <- New user IP=127.0.0.1:54912
