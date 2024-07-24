@@ -21,7 +21,6 @@ def start(binary):
         set resolve-heap-via-heuristic on
     '''
 
-
     if args.GDB:
         return gdb.debug(binary, gdbscript=gs)
     elif args.REMOTE:
