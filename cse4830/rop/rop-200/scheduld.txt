@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Fall 2022 | Florida Tech</title>
+  
+  <meta class="swiftype" name="description" data-type="string" content="" />
+  <meta class="swiftype" name="keywords" data-type="string" content="">
+  <!--T4 Meta Info-->
+
+  <!--Header 2022 Embed-->
+  
+
+<!-- Meta Info -->
+<meta charset="utf-8"/>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="facebook-domain-verification" content="1axwn62nch2jygg19mytid7g1g67ef" /><!--Facebook Verification-->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+<!-- generics -->
+<link rel="icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/32.png" sizes="32x32">
+<link rel="icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/57.png" sizes="57x57">
+<link rel="icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/76.png" sizes="76x76">
+<link rel="icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/96.png" sizes="96x96">
+<link rel="icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/128.png" sizes="128x128">
+<link rel="icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/228.png" sizes="228x228">
+
+<!-- Android -->
+<link rel="shortcut icon" sizes="196x196" href="/media/content-type-creator/fit-redesign-images-01/favicons/96.png">
+
+<!-- iOS -->
+<link rel="apple-touch-icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/120.png" sizes="120x120">
+<link rel="apple-touch-icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/152.png" sizes="152x152">
+<link rel="apple-touch-icon" href="/media/content-type-creator/fit-redesign-images-01/favicons/180.png" sizes="180x180">
+
+<!-- Windows 8 IE 10-->
+<meta name="msapplication-TileColor" content="#770000">
+<meta name="msapplication-TileImage" content="/media/content-type-creator/fit-redesign-images-01/favicons/144.png">
+
+
+  
+
+<!--Fav Icons-->
+
+<!-- Tracking Codes HEAD -->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TTP73RT');</script>
+<!-- End Google Tag Manager -->
+
+<!-- FONTS Files -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,700;1,900&display=swap" rel="stylesheet" /> 
+
+
+<!-- CSS Files -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.css" integrity="sha512-pbLYRiE96XJxmJgF8oWBfa9MdKwuXhlV7vgs2LLlapHLXceztfcta0bdeOgA4reIf0WH67ThWzA684JwkM3zfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.semanticui.min.css" integrity="sha512-Z6aNXv6992eleT+jDj3n70dHvdpYFC6Xz2gmmlCeTzIxUT5/jNKVpPxvOuxTzexywssRZeR0g5NziBFMEs0Hcw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" media href="/media/fit-website/site-assets/css/2022-homepage.css" /><!--Homepage specific CSS-->
+
+
+<!-- CDN JS Files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.8.8/semantic.min.js" integrity="sha512-t5mAtfZZmR2gl5LK7WEkJoyHCfyzoy10MlerMGhxsXl3J7uSSNTAW6FK/wvGBC8ua9AFazwMaC0LxsMTMiM5gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.jqueryui.min.js" integrity="sha512-9u6nki9uD72SzBtp/+7VmFplkUljohfLv2ogiMc1N4EwPAs7jG/3SBM6abgTJAxZdCjF5F9sg5Iis/uriTm1mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.semanticui.min.js" integrity="sha512-8B38KJBwxAoS9vVowfY3gU7EAtDzk/9HVK6fo9PKY5yJPWKWuRw+DXOCGOJ2nCFQNvX5VGVz9oSWEUGzk2A4Vg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js" integrity="sha512-dnvR4Aebv5bAtJxDunq3eE8puKAJrY9GBJYl9GC6lTOEC76s1dbDfJFcL9GyzpaDW4vlI/UjR8sKbc1j6Ynx6w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Bugherd Include ---->
+<!--<script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=ixjdgyw0jxplgf5xdhohua" async="true"></script>-->
+
+</head>
+
+<body id="home" class="ui">
+
+  <!-- Tracking Codes BODY -->
+  
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTP73RT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+  <!-- END - Tracking Codes BODY -->
+  
+
+
+  <header>
+    <div style="background:#FFF;"><a href="#main" class="skip-link">Skip to main content</a></div> 
+    <div class="ui two column grid container">
+      <div class="four wide middle aligned column" id="wordmark-wrapper">
+        <a href="https://www.fit.edu">
+          <span id="wordmarktag"><img src="/media/fit-website/site-assets/images/horizontal-tagline1.png" alt="Florida Tech | Florida's STEM University" style="width : 223px; height : 80px;     " /></span>
+          <span id="wordmark"><img src="/media/fit-website/site-assets/images/wordmark.png" alt="Florida Tech" style="width : 200px; height : 60px;     " /></span>
+        </a>
+      </div>
+
+      <div class="twelve wide column" id="top-navigation">
+
+        <div id="search-area" class="ui container searchbox disabled">
+          <div id="search-form">
+            <div id="home-search" class="ui input focus icon">
+              <label for="search-query1" class="visuallyhidden">Search: </label>
+              <!--<input type="text" size="25" title="search1" placeholder="I'm looking for..." class="st-default-search-input" id="search-query1" aria-describedby="instructions" />-->
+              <input type="text" id="st-global-search" data-st-install-key="NCdkzkySENNYrNyCzwvW" title="search1" placeholder="I'm looking for..." class="st-default-search-input" aria-describedby="instructions" >
+                <button class="ui button" type="submit" style="margin-left: -2em; background: none; padding: 0;"><i class="search icon" title="search"></i></button>
+                <span id="instructions" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.</span>
+                </div>
+            </div>
+          </div>
+
+          <nav id="secondary-menu" class="ui column stackable secondary menu floated right" aria-label="Secondary">
+            <ul>
+              <li>
+                <a class="item" href="https://www.fit.edu/students/">
+                  Students
+                </a>
+              </li>
+              <li>
+                <a class="item" href="https://www.fit.edu/faculty-staff/">
+                  Faculty & Staff
+                </a>
+              </li>
+              <li>
+                <a class="item" href="https://www.fit.edu/family-community/">
+                  Family & Community
+                </a>
+              </li>
+              <li>
+                <a class="item" href="https://www.fit.edu/alumni-friends/">
+                  Alumni & Friends
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav id="primary-menu" class="ui column stackable pointing menu floated right" id="menu" aria-label="Primary">
+            <ul>
+              <li>
+                <a class="item" id="academics">
+                  Academics <i class="angle down icon"></i>
+                </a>
+                <nav class="mega-dd">
+                  <div class="ui two column stackable grid container ">
+                    <div class="five wide column nav-description">
+                      <h2>
+                        <!--<a class="t4-tag-content-item " title="Home » Channels » www.fit.edu » Academics - Overview" href="#" data-t4-type="sslink" data-t4-ss-link-id="245">-->
+                        Academics
+                        <!--</a>-->
+                      </h2>
+                      <p class="description">
+                        Florida Tech’s approach to academics is research-driven, high-tech and hands-on, allowing our students to both gain knowledge and get real experience applying it. Here, you don’t just learn—you do.                      </p>
+                    </div>
+
+                    <div class="eleven wide column stackable ">
+                      
+                      <ul>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/programs/">Degrees & Programs</a>
+                        </li>
+                        <!--<li>
+                            <a class="item" href="https://www.fit.edu/programs/online/">Online Programs</a>
+                          </li>-->
+                        <li>
+                          <a class="item" href="https://www.fit.edu/academics/colleges-schools-departments">Colleges, Schools & Depts.</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/academics/services-resources">Services & Resources</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/academics/learning-experiences/">Learning Experiences</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/aba-online/">ABA Online</a>
+                        </li>
+
+                        <li>
+                          <a class="item" href="https://www.fit.edu/education-centers/orlando-fl/">Florida Tech at Orlando</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/education-centers/spaceport-titusville-fl/">Florida Tech at Spaceport</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/levelup/">Corporate Level Up Program</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/continuing-education/">Continuing Education</a>
+                        </li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+
+              </li>
+              <li>
+                <a class="item" id="research">
+                  Research <i class="angle down icon"></i>
+                </a>
+                <nav class="mega-dd">
+                  <div class="ui two column stackable grid container ">
+                    <div class="five wide column nav-description">
+                      <h2>
+                        Research
+                      </h2>
+                      <p class="description">
+                        It is through research that faculty members advance their fields, students enhance their learning, and the university creates change for the benefit of our planet and all of its inhabitants.                      </p>
+                    </div>
+
+                    <div class="eleven wide column stackable ">
+                      
+                      <ul>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/student-design/">Student Design & Research</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://research.fit.edu/" target="_blank">Centers, Institutes & Labs</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://news.fit.edu/" target="_blank">News & Stories</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://research.fit.edu/camid" target="_blank">Center for Advanced Manufacturing & Innovative Design (CAMID)</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://lib.fit.edu/">Library</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/faculty-profiles/">Faculty Profiles</a>
+                        </li>
+                        <!--<li>
+                            <a class="item" href="#">Expert Directory</a>
+                          </li>
+                          <li>
+                            <a class="item" href="https://www.fit.edu/research/about/corporate-relations/">Research Partnerships</a>
+                          </li> -->                                               
+                        <li>
+                          <a class="item" href="https://www.fit.edu/research/">Sponsored Programs</a>
+                        </li>                          
+                        <!--<li>
+                            <a class="item" href="#">Strengths & Capabilities</a>
+                          </li>-->
+                        <li>
+                          <a class="item" target="_blank" href="https://news.fit.edu/experts/">Expert Directory</a>
+                        </li>  
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </li>
+              <li>
+                <a class="item" id="admissions-aid">
+                  Admission & Aid <i class="angle down icon"></i>
+                </a>
+                <nav class="mega-dd">
+                  <div class="ui two column stackable grid container ">
+                    <div class="five wide column nav-description">
+                      <h2>
+                        Admission & Aid
+                      </h2>
+                      <p class="description">
+
+                        Ready for the future? Whether you hope to join the Florida Tech family as a freshman, transfer student or graduate student, your journey to Panther-hood starts here.                        <br />
+                        <a href="https://www.fit.edu/apply/" class="ui blue label">Apply</a>
+                        <a href="https://admissions.fit.edu/register/info" class="ui blue label">Get Info</a>
+                        <a href="https://admissions.fit.edu/portal/visit" class="ui blue label">Visit </a>
+
+                      </p>
+                    </div>
+
+                    <div class="eleven wide column stackable ">
+                      
+                      <ul>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/why-florida-tech/">Why Florida Tech</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/applying/first-year/">First Year Admission</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/applying/transfer/">Transfer Admission</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/applying/graduate/">Graduate Admission</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/applying/international/">International Admission</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/visiting/">Visiting Florida Tech</a>
+                        </li>
+
+
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/scholarships--aid/">Scholarships & Aid</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/admitted-students/">Admitted Students</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/applying/dual-enrollment/">Dual Enrollment</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/applying/non-degree-seeking/">Non-Degree Seeking</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/admissions/connect/">Connect With Us</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/financialaid/">Office of Financial Aid</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </li>
+              <li>
+                <a class="item" id="life-at-ft">
+                  Life at Florida Tech <i class="angle down icon"></i>
+                </a>
+                <nav class="mega-dd">
+                  <div class="ui two column stackable grid container ">
+                    <div class="five wide column nav-description">
+                      <h2>
+                        Life at Florida Tech
+                      </h2>
+                      <p class="description">
+                        What's it like to live and learn at Florida Tech? The answer differs for every student, but you can count on one thing: The people here are friendly, open-minded and passionate about their work.
+                        <!--<a href="https://www.fit.edu/about/" class="ui blue label">About Florida Tech</a>-->
+                      </p>
+                    </div>
+
+                    <div class="eleven wide column stackable ">
+                      
+                      <ul>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/student-life/student-life/clubs-and-organizations/">Clubs & Organizations</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/housing/">Residence-Life & Housing</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/dining/">Campus Dining</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/health/">Health & Wellness</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/clemente-center/">Fitness & Recreation</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/civic-engagement/">Civic Engagement</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/greeklife/">Greek Life</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/life-at-florida-tech/arts-culture">Arts & Culture</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/life-at-florida-tech/athletics-esports">Athletics & Esports</a>
+                        </li>
+                        <li>
+                          <a class="item" href="https://www.fit.edu/about/">About Florida Tech</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </li>
+              <li>
+                <button id="search-icon" class="item s-button">
+                  <span class="visuallyhidden">
+                    Select spacebar or enter to search Florida Tech website
+                  </span>
+                  <i class="search icon "></i> Search
+                </button>
+              </li>  
+            </ul>
+          </nav>
+        </div>
+
+        <div class="eight wide column middle aligned" id="responsive-menu-button">
+          <span class="visuallyhidden">MENU</span>
+          <i class="bars large icon"></i>
+          <i class="times large icon"></i>
+        </div>
+
+      </div>
+
+      </header>
+
+
+
+    <script type="text/javascript">
+      $('.s-button').click( function() {
+      $("#search-area").toggleClass("disabled");
+      $("#search-area input").focus();
+      });
+    </script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--Inner page CSS-->
+  <link rel="stylesheet" type="text/css" media href="/media/fit-website/site-assets/css/inner-page.css" />
+
+	<!--Custom Code Section-->
+  
+  <!--End Custom Code Section-->
+
+<main id="main">
+
+  <!---------------------------------------------
+----------------- HEADER IMAGE --------------
+--------------------------------------------->
+
+  <div id="headerimg-sm" class="ui basic vertical segment">
+    <img class="headerimg" src="/media/content-type-creator/fit-redesign-images-01/campus-bg.jpg" alt="Florida Tech Campus" />
+
+    <div class="site-title">
+      <div class="ui container">
+        <div class="ui breadcrumb"><ol id="breadCrumbs"><li tabindex="-1" aria-hidden="true"><i class="ui home icon"></i></li> <li><a href="https://www.fit.edu" alt="Florida Tech Home">Florida Tech</a></li> <li tabindex="-1" aria-hidden="true"><i class="right angle icon divider"></i></li><li> <a href="/registrar/">Office of the Registrar</a></li><li tabindex="-1" aria-hidden="true"><i class="right angle icon divider"></i></li><li><a href="/registrar/academic-calendar/">Academic Calendars</a></li><li tabindex="-1" aria-hidden="true"><i class="right angle icon divider"></i></li><li><a href="/registrar/academic-calendar/fall-2022/">Fall 2022</a></li></ol></div>
+
+        <h1>Fall 2022</h1>
+      </div>
+    </div>
+  </div>
+
+  <!---------------------------------------------
+--------------- END HEADER IMAGE ------------
+---------------------------------------------->
+  <div id="page-content">
+    <div class="ui stackable grid container">
+
+      <div class="four wide column left-nav" role="navigation" aria-label="Inner Page">
+        <div class="sub-nav">
+          <div class="eight wide column middle aligned" id="responsive-sub-menu-button">
+            Page Menu
+            <i class="bars large icon"></i>
+            <i class="times large icon"></i>
+          </div>
+          <ul><li><span class="currentbranch0"><a href="/registrar/academic-calendar/">Academic Calendars</a></span>
+<ul class="multilevel-linkul-0">
+<li><span class="currentbranch1"><a href="/registrar/academic-calendar/fall-2022/">Fall 2022</a></span></li>
+<li><a href="/registrar/academic-calendar/spring-2023/">Spring 2023</a></li>
+<li><a href="/registrar/academic-calendar/summer-2023/">Summer 2023</a></li>
+
+</ul>
+
+</li><li><a href="/registrar/advising-and-registration/">Advising and Registration</a></li><li><a href="/registrar/class-schedules/">Class Schedules</a></li><li><a href="/registrar/graduation/">Graduation</a></li><li><a href="/registrar/records-office/">Records Office</a></li><li><a href="/registrar/transcripts--enrollment-verification/">Transcripts &amp; Enrollment Verification</a></li><li><a href="/registrar/final-examination-schedules/">Final Examination Schedules</a></li><li><a href="/registrar/academic-standards-and-policies/">Academic Standards and Policies</a></li><li><a href="/registrar/release-of-student-information/">Release of Student Information</a></li><li><a href="/registrar/resources/">Resources</a></li><li><a href="/registrar/transfer-credit/">Transfer Credit</a></li><li><a href="/registrar/tuition--fees/">Tuition &amp; Fees</a></li><li><a href="/registrar/deans-list/">Dean's List</a></li><li><a href="/registrar/forms-and-documents/">Forms and Documents</a></li><li><a href="/registrar/contact-us/">Contact Us</a></li><li><a href="http://catalog.fit.edu/">University Catalog</a></li></ul>
+        </div>
+      </div>
+
+      <div class="twelve wide column main-body" data-swiftype-name="body" data-swiftype-type="text">
+<div class="ui fluid styled accordion"><button class='ui top attached left aligned fluid basic segment title ' aria-controls='melbourne' id='melbourneid'>
+  <i class="dropdown icon"></i>
+  Melbourne Campus &amp; Education Centers (16-week Term)
+</button>
+
+<div id='melbourne' role="region" aria-labelledby='melbourneid' class='ui attached basic segment content '>
+  <table width="1061">
+<tbody>
+<tr>
+<td width="88">Date</td>
+<td width="973">Description</td>
+</tr>
+<tr>
+<td width="88">Mar. 18</td>
+<td width="973">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="88">Apr. 10</td>
+<td width="973">Registration for Melbourne Campus begins at 8pm (staggered registration)</td>
+</tr>
+<tr>
+<td width="88">Apr. 25</td>
+<td width="973">Registration for Melbourne Campus New students begins at 8am</td>
+</tr>
+<tr>
+<td width="88">Jun. 13</td>
+<td width="973">Registration for Education Centers New and Returning students begins at 8am</td>
+</tr>
+<tr>
+<td width="88">Aug. 15</td>
+<td width="973">Tuition and fees due for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="88">Aug. 22</td>
+<td width="973">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="88">Aug. 22</td>
+<td width="973">Last day for Melbourne Campus returning students to register for Fall Semester 2022 without late registration fee of $150</td>
+</tr>
+<tr>
+<td width="88">31-Aug</td>
+<td width="973">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W (Wednesday-noon)</td>
+</tr>
+<tr>
+<td width="88">Sept. 2</td>
+<td width="973">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="88">Sept. 5</td>
+<td width="973">Holiday (Labor Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Sept.9</td>
+<td width="973">Last day to Petition to Graduate for Spring Semester 2023 without a late fee</td>
+</tr>
+<tr>
+<td width="88">Sept. 30</td>
+<td width="973">Termination of F-1 immigration status deadline</td>
+</tr>
+<tr>
+<td width="88">Oct. 7</td>
+<td width="973">Midterm grading opens for faculty to enter midterm grades, 0000-, 1000- and 2000-level courses</td>
+</tr>
+<tr>
+<td width="88">Oct. 10</td>
+<td width="973">Holiday (Columbus Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Oct. 10-11</td>
+<td width="973">Fall Break (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Oct. 28</td>
+<td width="973">Last day to withdraw from a class with a final grade of W</td>
+</tr>
+<tr>
+<td width="88">Nov. 6</td>
+<td width="973">Registration for Melbourne Campus Spring Semester 2023 begins (8pm)</td>
+</tr>
+<tr>
+<td width="88">Nov. 10</td>
+<td width="973">Registration for Education Centers Spring Semester 2023 begins</td>
+</tr>
+<tr>
+<td width="88">Nov. 11</td>
+<td width="973">Holiday (Veterans Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Nov. 23-25</td>
+<td width="973">Holiday (Thanksgiving) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Dec. 5</td>
+<td width="973">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="88">Dec. 9</td>
+<td width="973">Last day of classes</td>
+</tr>
+<tr>
+<td width="88">Dec. 12</td>
+<td width="973">Last day to submit approved copies of thesis or dissertation to the Office of Graduate Programs</td>
+</tr>
+<tr>
+<td width="88">Dec. 12-16</td>
+<td width="973">FINAL EXAMS</td>
+</tr>
+<tr>
+<td width="88">Dec. 17</td>
+<td width="973">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!--<button class='ui top attached left aligned fluid basic segment title ' aria-controls='melbourne' id='melbourneid'>
+  
+  Melbourne Campus &amp; Education Centers (16-week Term)
+  <i class="plus icon"></i><i class="minus icon"></i>
+</button>
+
+<div id='melbourne' role="region" aria-labelledby='melbourneid' class='ui attached basic segment content '>
+  <table width="1061">
+<tbody>
+<tr>
+<td width="88">Date</td>
+<td width="973">Description</td>
+</tr>
+<tr>
+<td width="88">Mar. 18</td>
+<td width="973">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="88">Apr. 10</td>
+<td width="973">Registration for Melbourne Campus begins at 8pm (staggered registration)</td>
+</tr>
+<tr>
+<td width="88">Apr. 25</td>
+<td width="973">Registration for Melbourne Campus New students begins at 8am</td>
+</tr>
+<tr>
+<td width="88">Jun. 13</td>
+<td width="973">Registration for Education Centers New and Returning students begins at 8am</td>
+</tr>
+<tr>
+<td width="88">Aug. 15</td>
+<td width="973">Tuition and fees due for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="88">Aug. 22</td>
+<td width="973">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="88">Aug. 22</td>
+<td width="973">Last day for Melbourne Campus returning students to register for Fall Semester 2022 without late registration fee of $150</td>
+</tr>
+<tr>
+<td width="88">31-Aug</td>
+<td width="973">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W (Wednesday-noon)</td>
+</tr>
+<tr>
+<td width="88">Sept. 2</td>
+<td width="973">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="88">Sept. 5</td>
+<td width="973">Holiday (Labor Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Sept.9</td>
+<td width="973">Last day to Petition to Graduate for Spring Semester 2023 without a late fee</td>
+</tr>
+<tr>
+<td width="88">Sept. 30</td>
+<td width="973">Termination of F-1 immigration status deadline</td>
+</tr>
+<tr>
+<td width="88">Oct. 7</td>
+<td width="973">Midterm grading opens for faculty to enter midterm grades, 0000-, 1000- and 2000-level courses</td>
+</tr>
+<tr>
+<td width="88">Oct. 10</td>
+<td width="973">Holiday (Columbus Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Oct. 10-11</td>
+<td width="973">Fall Break (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Oct. 28</td>
+<td width="973">Last day to withdraw from a class with a final grade of W</td>
+</tr>
+<tr>
+<td width="88">Nov. 6</td>
+<td width="973">Registration for Melbourne Campus Spring Semester 2023 begins (8pm)</td>
+</tr>
+<tr>
+<td width="88">Nov. 10</td>
+<td width="973">Registration for Education Centers Spring Semester 2023 begins</td>
+</tr>
+<tr>
+<td width="88">Nov. 11</td>
+<td width="973">Holiday (Veterans Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Nov. 23-25</td>
+<td width="973">Holiday (Thanksgiving) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="88">Dec. 5</td>
+<td width="973">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="88">Dec. 9</td>
+<td width="973">Last day of classes</td>
+</tr>
+<tr>
+<td width="88">Dec. 12</td>
+<td width="973">Last day to submit approved copies of thesis or dissertation to the Office of Graduate Programs</td>
+</tr>
+<tr>
+<td width="88">Dec. 12-16</td>
+<td width="973">FINAL EXAMS</td>
+</tr>
+<tr>
+<td width="88">Dec. 17</td>
+<td width="973">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+  
+</div>--><button class='ui top attached left aligned fluid basic segment title ' aria-controls='online' id='onlineid'>
+  <i class="dropdown icon"></i>
+  Florida Tech Online (8-Week Terms)
+</button>
+
+<div id='online' role="region" aria-labelledby='onlineid' class='ui attached basic segment content '>
+  <p><strong>Fall 1</strong></p>
+<table width="478">
+<tbody>
+<tr>
+<td width="68">Date</td>
+<td width="410">Description</td>
+</tr>
+<tr>
+<td width="68">Jun. 23</td>
+<td width="410">First day to register for Fall 1–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 5</td>
+<td width="410">Last day to Petition to Graduate for Fall 1–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 18</td>
+<td width="410">First day to register for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 24</td>
+<td width="410">Last day to register and confirm payment for Fall 1–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 29</td>
+<td width="410">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="68">Sept. 4</td>
+<td width="410">Last day to withdraw from a class with a full refund</td>
+</tr>
+<tr>
+<td width="68">Sept. 5</td>
+<td width="410">Holiday (Labor Day)</td>
+</tr>
+<tr>
+<td width="68">Sept. 30</td>
+<td width="410">Last day to Petition to Graduate for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="68">Oct. 9</td>
+<td width="410">Last day to withdraw from a class with a W and no refund</td>
+</tr>
+<tr>
+<td width="68">Oct. 10</td>
+<td width="410">Holiday (Columbus Day)</td>
+</tr>
+<tr>
+<td width="68">Oct. 19</td>
+<td width="410">Last day for admissions eligibility for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="68">Oct. 23</td>
+<td width="410">Last day of classes (Sunday)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fall 2</strong></p>
+<table width="499">
+<tbody>
+<tr>
+<td width="89">Date</td>
+<td width="410">Description</td>
+</tr>
+<tr>
+<td width="89">Aug. 18</td>
+<td width="410">First day to register for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="89">Sept. 30</td>
+<td width="410">Last day to Petition to Graduate for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="89">Oct. 13</td>
+<td width="410">First day to register for Spring 1–2023</td>
+</tr>
+<tr>
+<td width="89">Oct. 19</td>
+<td width="410">Last day to register and confirm payment for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="89">Oct. 24</td>
+<td width="410">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="89">Oct. 30</td>
+<td width="410">Last day to withdraw from a class with a full refund</td>
+</tr>
+<tr>
+<td width="89">Nov. 11</td>
+<td width="410">Holiday (Veterans Day)</td>
+</tr>
+<tr>
+<td width="89">Nov. 18</td>
+<td width="410">Last day to Petition to Graduate for Spring 1–2023</td>
+</tr>
+<tr>
+<td width="89">Nov. 23-25</td>
+<td width="410">Holiday (Thanksgiving)</td>
+</tr>
+<tr>
+<td width="89">Dec. 4</td>
+<td width="410">Last day to withdraw from a class with a W and no refund</td>
+</tr>
+<tr>
+<td width="89">Dec. 17</td>
+<td width="410">Fall Commencement Exercises</td>
+</tr>
+<tr>
+<td width="89">Dec. 18</td>
+<td width="410">Last day of classes (Sunday)</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!--<button class='ui top attached left aligned fluid basic segment title ' aria-controls='online' id='onlineid'>
+  
+  Florida Tech Online (8-Week Terms)
+  <i class="plus icon"></i><i class="minus icon"></i>
+</button>
+
+<div id='online' role="region" aria-labelledby='onlineid' class='ui attached basic segment content '>
+  <p><strong>Fall 1</strong></p>
+<table width="478">
+<tbody>
+<tr>
+<td width="68">Date</td>
+<td width="410">Description</td>
+</tr>
+<tr>
+<td width="68">Jun. 23</td>
+<td width="410">First day to register for Fall 1–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 5</td>
+<td width="410">Last day to Petition to Graduate for Fall 1–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 18</td>
+<td width="410">First day to register for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 24</td>
+<td width="410">Last day to register and confirm payment for Fall 1–2022</td>
+</tr>
+<tr>
+<td width="68">Aug. 29</td>
+<td width="410">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="68">Sept. 4</td>
+<td width="410">Last day to withdraw from a class with a full refund</td>
+</tr>
+<tr>
+<td width="68">Sept. 5</td>
+<td width="410">Holiday (Labor Day)</td>
+</tr>
+<tr>
+<td width="68">Sept. 30</td>
+<td width="410">Last day to Petition to Graduate for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="68">Oct. 9</td>
+<td width="410">Last day to withdraw from a class with a W and no refund</td>
+</tr>
+<tr>
+<td width="68">Oct. 10</td>
+<td width="410">Holiday (Columbus Day)</td>
+</tr>
+<tr>
+<td width="68">Oct. 19</td>
+<td width="410">Last day for admissions eligibility for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="68">Oct. 23</td>
+<td width="410">Last day of classes (Sunday)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fall 2</strong></p>
+<table width="499">
+<tbody>
+<tr>
+<td width="89">Date</td>
+<td width="410">Description</td>
+</tr>
+<tr>
+<td width="89">Aug. 18</td>
+<td width="410">First day to register for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="89">Sept. 30</td>
+<td width="410">Last day to Petition to Graduate for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="89">Oct. 13</td>
+<td width="410">First day to register for Spring 1–2023</td>
+</tr>
+<tr>
+<td width="89">Oct. 19</td>
+<td width="410">Last day to register and confirm payment for Fall 2–2022</td>
+</tr>
+<tr>
+<td width="89">Oct. 24</td>
+<td width="410">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="89">Oct. 30</td>
+<td width="410">Last day to withdraw from a class with a full refund</td>
+</tr>
+<tr>
+<td width="89">Nov. 11</td>
+<td width="410">Holiday (Veterans Day)</td>
+</tr>
+<tr>
+<td width="89">Nov. 18</td>
+<td width="410">Last day to Petition to Graduate for Spring 1–2023</td>
+</tr>
+<tr>
+<td width="89">Nov. 23-25</td>
+<td width="410">Holiday (Thanksgiving)</td>
+</tr>
+<tr>
+<td width="89">Dec. 4</td>
+<td width="410">Last day to withdraw from a class with a W and no refund</td>
+</tr>
+<tr>
+<td width="89">Dec. 17</td>
+<td width="410">Fall Commencement Exercises</td>
+</tr>
+<tr>
+<td width="89">Dec. 18</td>
+<td width="410">Last day of classes (Sunday)</td>
+</tr>
+</tbody>
+</table>
+  
+</div>--><button class='ui top attached left aligned fluid basic segment title ' aria-controls='ba' id='baid'>
+  <i class="dropdown icon"></i>
+  Behavior Analysis 5th Edition (15-week Term)
+</button>
+
+<div id='ba' role="region" aria-labelledby='baid' class='ui attached basic segment content '>
+  <table width="629">
+<tbody>
+<tr>
+<td width="85">Date</td>
+<td width="544">Description</td>
+</tr>
+<tr>
+<td width="85">Mar. 18</td>
+<td width="544">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="85">June 13</td>
+<td width="544">Registration for Fall Semester 2022 Begins</td>
+</tr>
+<tr>
+<td width="85">Aug. 15</td>
+<td width="544">Tuition and fees due for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="85">Aug. 22</td>
+<td width="544">Last day to apply for Fall Semester&nbsp;2022</td>
+</tr>
+<tr>
+<td width="85">Aug. 29</td>
+<td width="544">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="85">Sept. 2</td>
+<td width="544">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W&nbsp;</td>
+</tr>
+<tr>
+<td width="85">Sept. 2</td>
+<td width="544">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="85">Sept. 5</td>
+<td width="544">Holiday (Labor Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="85">Sept. 9</td>
+<td width="544">Last day to withdraw from a class with a final grade of W and no refund (5-week class beginning on 8/29)</td>
+</tr>
+<tr>
+<td width="85">Oct. 7</td>
+<td width="544">Last day to withdraw from a class with a final grade of W and no refund (8 and 11-week class)</td>
+</tr>
+<tr>
+<td width="85">Oct. 10</td>
+<td width="544">Holiday (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="85">Oct. 22</td>
+<td width="544">8-week classes closes</td>
+</tr>
+<tr>
+<td width="85">Nov. 4</td>
+<td width="544">Last day to withdraw&nbsp;from a class with a final grade of W and no refund (15-week class)</td>
+</tr>
+<tr>
+<td width="85">Nov. 7</td>
+<td width="544">5-week class opens</td>
+</tr>
+<tr>
+<td width="85">Nov. 14</td>
+<td width="544">Registration for Spring Semester 2023 begins (8am)</td>
+</tr>
+<tr>
+<td width="85">Nov. 12</td>
+<td width="544">11-week class closes</td>
+</tr>
+<tr>
+<td width="85">Nov. 21-27</td>
+<td width="544">No Classes – Thanksgiving Week&nbsp;</td>
+</tr>
+<tr>
+<td width="85">Dec. 2</td>
+<td width="544">Last day to withdraw from a class with a final grade of W and no refund (5-week class)</td>
+</tr>
+<tr>
+<td width="85">Dec. 17</td>
+<td width="544">Last day of classes</td>
+</tr>
+<tr>
+<td width="85">Dec. 17</td>
+<td width="544">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+</div>
+
+
+
+<!--<button class='ui top attached left aligned fluid basic segment title ' aria-controls='ba' id='baid'>
+  
+  Behavior Analysis 5th Edition (15-week Term)
+  <i class="plus icon"></i><i class="minus icon"></i>
+</button>
+
+<div id='ba' role="region" aria-labelledby='baid' class='ui attached basic segment content '>
+  <table width="629">
+<tbody>
+<tr>
+<td width="85">Date</td>
+<td width="544">Description</td>
+</tr>
+<tr>
+<td width="85">Mar. 18</td>
+<td width="544">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="85">June 13</td>
+<td width="544">Registration for Fall Semester 2022 Begins</td>
+</tr>
+<tr>
+<td width="85">Aug. 15</td>
+<td width="544">Tuition and fees due for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="85">Aug. 22</td>
+<td width="544">Last day to apply for Fall Semester&nbsp;2022</td>
+</tr>
+<tr>
+<td width="85">Aug. 29</td>
+<td width="544">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="85">Sept. 2</td>
+<td width="544">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W&nbsp;</td>
+</tr>
+<tr>
+<td width="85">Sept. 2</td>
+<td width="544">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="85">Sept. 5</td>
+<td width="544">Holiday (Labor Day) (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="85">Sept. 9</td>
+<td width="544">Last day to withdraw from a class with a final grade of W and no refund (5-week class beginning on 8/29)</td>
+</tr>
+<tr>
+<td width="85">Oct. 7</td>
+<td width="544">Last day to withdraw from a class with a final grade of W and no refund (8 and 11-week class)</td>
+</tr>
+<tr>
+<td width="85">Oct. 10</td>
+<td width="544">Holiday (NO CLASSES)</td>
+</tr>
+<tr>
+<td width="85">Oct. 22</td>
+<td width="544">8-week classes closes</td>
+</tr>
+<tr>
+<td width="85">Nov. 4</td>
+<td width="544">Last day to withdraw&nbsp;from a class with a final grade of W and no refund (15-week class)</td>
+</tr>
+<tr>
+<td width="85">Nov. 7</td>
+<td width="544">5-week class opens</td>
+</tr>
+<tr>
+<td width="85">Nov. 14</td>
+<td width="544">Registration for Spring Semester 2023 begins (8am)</td>
+</tr>
+<tr>
+<td width="85">Nov. 12</td>
+<td width="544">11-week class closes</td>
+</tr>
+<tr>
+<td width="85">Nov. 21-27</td>
+<td width="544">No Classes – Thanksgiving Week&nbsp;</td>
+</tr>
+<tr>
+<td width="85">Dec. 2</td>
+<td width="544">Last day to withdraw from a class with a final grade of W and no refund (5-week class)</td>
+</tr>
+<tr>
+<td width="85">Dec. 17</td>
+<td width="544">Last day of classes</td>
+</tr>
+<tr>
+<td width="85">Dec. 17</td>
+<td width="544">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+  
+</div>--><button class='ui top attached left aligned fluid basic segment title ' aria-controls='doctorBA' id='doctorBAid'>
+  <i class="dropdown icon"></i>
+  Doctor of Business Administration (15-week Term)
+</button>
+
+<div id='doctorBA' role="region" aria-labelledby='doctorBAid' class='ui attached basic segment content '>
+  <table width="664">
+<tbody>
+<tr>
+<td width="64">Date</td>
+<td width="600">Description</td>
+</tr>
+<tr>
+<td width="64">Mar. 18</td>
+<td width="600">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="64">14-Apr</td>
+<td width="600">Registration Begins for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="64">Aug. 15</td>
+<td width="600">Tuition and fees due for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="64">Aug. 29</td>
+<td width="600">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="64">Sept. 2</td>
+<td width="600">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="64">Sep. 7</td>
+<td width="600">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W*</td>
+</tr>
+<tr>
+<td width="64">Nov. 4</td>
+<td width="600">Last day to withdraw from a class with a final grade of W&nbsp;</td>
+</tr>
+<tr>
+<td width="64">Dec. 5</td>
+<td width="600">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="64">Dec. 9</td>
+<td width="600">Last day of classes</td>
+</tr>
+<tr>
+<td width="64">Dec. 17</td>
+<td width="600">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+<p>*DBA students must add courses prior to the first weekend of classes.</p>
+</div>
+
+
+
+<!--<button class='ui top attached left aligned fluid basic segment title ' aria-controls='doctorBA' id='doctorBAid'>
+  
+  Doctor of Business Administration (15-week Term)
+  <i class="plus icon"></i><i class="minus icon"></i>
+</button>
+
+<div id='doctorBA' role="region" aria-labelledby='doctorBAid' class='ui attached basic segment content '>
+  <table width="664">
+<tbody>
+<tr>
+<td width="64">Date</td>
+<td width="600">Description</td>
+</tr>
+<tr>
+<td width="64">Mar. 18</td>
+<td width="600">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="64">14-Apr</td>
+<td width="600">Registration Begins for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="64">Aug. 15</td>
+<td width="600">Tuition and fees due for Fall Semester 2022</td>
+</tr>
+<tr>
+<td width="64">Aug. 29</td>
+<td width="600">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="64">Sept. 2</td>
+<td width="600">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="64">Sep. 7</td>
+<td width="600">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W*</td>
+</tr>
+<tr>
+<td width="64">Nov. 4</td>
+<td width="600">Last day to withdraw from a class with a final grade of W&nbsp;</td>
+</tr>
+<tr>
+<td width="64">Dec. 5</td>
+<td width="600">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="64">Dec. 9</td>
+<td width="600">Last day of classes</td>
+</tr>
+<tr>
+<td width="64">Dec. 17</td>
+<td width="600">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+<p>*DBA students must add courses prior to the first weekend of classes.</p>
+  
+</div>--><button class='ui top attached left aligned fluid basic segment title ' aria-controls='northropGrumman' id='northropGrummanid'>
+  <i class="dropdown icon"></i>
+  Northrop Grumman (11-week Term)
+</button>
+
+<div id='northropGrumman' role="region" aria-labelledby='northropGrummanid' class='ui attached basic segment content '>
+  <h3>Fall 1 (July – September)</h3>
+<table width="928">
+<tbody>
+<tr>
+<td width="80">Date</td>
+<td width="848">Description</td>
+</tr>
+<tr>
+<td width="80">March 18</td>
+<td width="848">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="80">June 13</td>
+<td width="848">Registration Begins for Fall-1 2022</td>
+</tr>
+<tr>
+<td width="80">June 30</td>
+<td width="848">Deadline to appeal academic dismissal from Summer 2022</td>
+</tr>
+<tr>
+<td width="80">July 4</td>
+<td width="848">Holiday (Independence Day) Monday</td>
+</tr>
+<tr>
+<td width="80">July 5</td>
+<td width="848">Tuition and Fees due for Fall-1 2022</td>
+</tr>
+<tr>
+<td width="80">July 11</td>
+<td width="848">CLASSES BEGIN</td>
+</tr>
+<tr>
+<td width="80">July 18</td>
+<td width="848">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W</td>
+</tr>
+<tr>
+<td width="80">July 25</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 60% money back</td>
+</tr>
+<tr>
+<td width="80">Aug. 1</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 40% money back</td>
+</tr>
+<tr>
+<td width="80">Aug. 19</td>
+<td width="848">Last day to withdraw from a class with a final grade of W and 0% money back</td>
+</tr>
+<tr>
+<td width="80">Sept. 2</td>
+<td width="848">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="80">Sept. 5-9</td>
+<td width="848">NO CLASSES</td>
+</tr>
+<tr>
+<td width="80">Sept. 9</td>
+<td width="848">Last day to Petition to Graduate for Spring 2023 without a late fee</td>
+</tr>
+<tr>
+<td width="80">Sept. 23</td>
+<td width="848">Last day of classes</td>
+</tr>
+<tr>
+<td width="80">Sept.&nbsp;27</td>
+<td width="848">Grades available on PAWS after 5:00pm</td>
+</tr>
+<tr>
+<td width="80">Dec. 5</td>
+<td width="848">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="80">Dec. 17</td>
+<td width="848">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+<h3>Fall 2 (September – December)</h3>
+<table width="928">
+<tbody>
+<tr>
+<td width="80">Date</td>
+<td width="848">Description</td>
+</tr>
+<tr>
+<td width="80">Sept. 6</td>
+<td width="848">Registration Begins for Fall-2 2022</td>
+</tr>
+<tr>
+<td width="80">Sept. 9</td>
+<td width="848">Last day to Petition to Graduate for Spring 2023 without a late fee</td>
+</tr>
+<tr>
+<td width="80">Sept.&nbsp;26</td>
+<td width="848">Tuition and Fees due for Fall-2 2022</td>
+</tr>
+<tr>
+<td width="80">Oct. 3</td>
+<td width="848">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="80">Oct. 4</td>
+<td width="848">Deadline to appeal academic dismissal from Fall-1 2022</td>
+</tr>
+<tr>
+<td width="80">Oct. 10</td>
+<td width="848">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W</td>
+</tr>
+<tr>
+<td width="80">Oct. 17</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 60% money back</td>
+</tr>
+<tr>
+<td width="80">Oct. 24</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 40% money back</td>
+</tr>
+<tr>
+<td width="80">Nov. 11</td>
+<td width="848">Last day to withdraw from a class with a final grade of W and 0% money back</td>
+</tr>
+<tr>
+<td width="80">Nov. 21-25</td>
+<td width="848">No Classes – Thanksgiving Week&nbsp;</td>
+</tr>
+<tr>
+<td width="80">Dec. 5</td>
+<td width="848">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="80">Dec. 16</td>
+<td width="848">Last day of classes</td>
+</tr>
+<tr>
+<td width="80">Dec. 17</td>
+<td width="848">Fall Commencement Exercises</td>
+</tr>
+<tr>
+<td width="80">Dec. 20</td>
+<td width="848">Grades available on PAWS after 5:00pm</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!--<button class='ui top attached left aligned fluid basic segment title ' aria-controls='northropGrumman' id='northropGrummanid'>
+  
+  Northrop Grumman (11-week Term)
+  <i class="plus icon"></i><i class="minus icon"></i>
+</button>
+
+<div id='northropGrumman' role="region" aria-labelledby='northropGrummanid' class='ui attached basic segment content '>
+  <h3>Fall 1 (July – September)</h3>
+<table width="928">
+<tbody>
+<tr>
+<td width="80">Date</td>
+<td width="848">Description</td>
+</tr>
+<tr>
+<td width="80">March 18</td>
+<td width="848">Last day to Petition to Graduate for Fall Semester 2022 without a late fee</td>
+</tr>
+<tr>
+<td width="80">June 13</td>
+<td width="848">Registration Begins for Fall-1 2022</td>
+</tr>
+<tr>
+<td width="80">June 30</td>
+<td width="848">Deadline to appeal academic dismissal from Summer 2022</td>
+</tr>
+<tr>
+<td width="80">July 4</td>
+<td width="848">Holiday (Independence Day) Monday</td>
+</tr>
+<tr>
+<td width="80">July 5</td>
+<td width="848">Tuition and Fees due for Fall-1 2022</td>
+</tr>
+<tr>
+<td width="80">July 11</td>
+<td width="848">CLASSES BEGIN</td>
+</tr>
+<tr>
+<td width="80">July 18</td>
+<td width="848">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W</td>
+</tr>
+<tr>
+<td width="80">July 25</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 60% money back</td>
+</tr>
+<tr>
+<td width="80">Aug. 1</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 40% money back</td>
+</tr>
+<tr>
+<td width="80">Aug. 19</td>
+<td width="848">Last day to withdraw from a class with a final grade of W and 0% money back</td>
+</tr>
+<tr>
+<td width="80">Sept. 2</td>
+<td width="848">Re-petition deadline for Fall Semester 2022 (for students who had petitioned for Spring/Summer Semester 2022)</td>
+</tr>
+<tr>
+<td width="80">Sept. 5-9</td>
+<td width="848">NO CLASSES</td>
+</tr>
+<tr>
+<td width="80">Sept. 9</td>
+<td width="848">Last day to Petition to Graduate for Spring 2023 without a late fee</td>
+</tr>
+<tr>
+<td width="80">Sept. 23</td>
+<td width="848">Last day of classes</td>
+</tr>
+<tr>
+<td width="80">Sept.&nbsp;27</td>
+<td width="848">Grades available on PAWS after 5:00pm</td>
+</tr>
+<tr>
+<td width="80">Dec. 5</td>
+<td width="848">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="80">Dec. 17</td>
+<td width="848">Fall Commencement Exercises</td>
+</tr>
+</tbody>
+</table>
+<h3>Fall 2 (September – December)</h3>
+<table width="928">
+<tbody>
+<tr>
+<td width="80">Date</td>
+<td width="848">Description</td>
+</tr>
+<tr>
+<td width="80">Sept. 6</td>
+<td width="848">Registration Begins for Fall-2 2022</td>
+</tr>
+<tr>
+<td width="80">Sept. 9</td>
+<td width="848">Last day to Petition to Graduate for Spring 2023 without a late fee</td>
+</tr>
+<tr>
+<td width="80">Sept.&nbsp;26</td>
+<td width="848">Tuition and Fees due for Fall-2 2022</td>
+</tr>
+<tr>
+<td width="80">Oct. 3</td>
+<td width="848">CLASSES BEGIN (Monday)</td>
+</tr>
+<tr>
+<td width="80">Oct. 4</td>
+<td width="848">Deadline to appeal academic dismissal from Fall-1 2022</td>
+</tr>
+<tr>
+<td width="80">Oct. 10</td>
+<td width="848">Last day to register or add a class, or drop a class with full tuition refund and without receiving a grade of W</td>
+</tr>
+<tr>
+<td width="80">Oct. 17</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 60% money back</td>
+</tr>
+<tr>
+<td width="80">Oct. 24</td>
+<td width="848">Last day to completely withdraw from the university with a final grade of W and 40% money back</td>
+</tr>
+<tr>
+<td width="80">Nov. 11</td>
+<td width="848">Last day to withdraw from a class with a final grade of W and 0% money back</td>
+</tr>
+<tr>
+<td width="80">Nov. 21-25</td>
+<td width="848">No Classes – Thanksgiving Week&nbsp;</td>
+</tr>
+<tr>
+<td width="80">Dec. 5</td>
+<td width="848">Last day to successfully complete graduate-level defense and examination for Fall 2022 commencement</td>
+</tr>
+<tr>
+<td width="80">Dec. 16</td>
+<td width="848">Last day of classes</td>
+</tr>
+<tr>
+<td width="80">Dec. 17</td>
+<td width="848">Fall Commencement Exercises</td>
+</tr>
+<tr>
+<td width="80">Dec. 20</td>
+<td width="848">Grades available on PAWS after 5:00pm</td>
+</tr>
+</tbody>
+</table>
+  
+</div>--></div></div>
+</div>
+</main>
+
+
+<!--Footer 2022 Embed-->
+<footer>
+
+  <div class="ui four column stackable grid container">
+    <div class="column">
+      <img id="stacked-logo" src='/media/fit-website/site-assets/images/homepage-images/1-hrpreview-300x200.png' alt="Florida Tech">
+
+
+        <p>
+          150 W. University Blvd.<br />
+          Melbourne, FL 32901
+        </p>
+        <p>
+          <a href="tel:3216748000">(321) 674-8000</a>
+        </p>
+
+
+
+        </div>
+
+      <div class="column">
+        <a class="ui big fluid yellow button" id="show-support" href="https://www.fit.edu/giving/">Show Your Support</a>
+        <a class="ui big fluid inverted button" href="https://www.fit.edu/contact/">Contact Us</a>
+        <ul id="social-media">
+          <li>
+            <a href="https://www.facebook.com/FloridaInstituteofTechnology" id="facebook"><span class="visuallyhidden">Florida Tech Facebook</span></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/floridatech" id="twitter"><span class="visuallyhidden">Florida Tech Twitter</span></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/floridatech/" id="instagram"><span class="visuallyhidden">Florida Tech Instagram</span></a>
+          </li>
+          <li>
+            <a href="https://www.snapchat.com/add/floridatechsnap" id="snapchat"><span class="visuallyhidden">Florida Tech Snapchat</span></a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/c/FloridaTechOfficial" id="youtube"><span class="visuallyhidden">Florida Tech YouTube</span></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/edu/school?id=18092&trk=tyah" id="linkedin"><span class="visuallyhidden">Florida Tech LinkedIn</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <strong>Resources</strong>
+        <ul>
+          <li>
+            <a class="item" href="https://www.fit.edu/registrar/academic-calendar/">Academic Calendar</a>
+          </li>
+          <li>
+            <a class="item" href="https://catalog.fit.edu/">Catalog</a>
+          </li>
+          
+          <li>
+            <a class="item" href="https://www.fit.edu/employment/">Employment</a>
+          </li>
+          <li>
+            <a class="item" href="https://www.fit.edu/security/">Security</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <strong>Information</strong>
+        <ul>
+          <li>
+            <a class="item" href="https://www.fit.edu/financialaid/policies-and-disclosures/consumer-information-disclosures/">Consumer Information Disclosures</a>
+          </li>
+          <li>
+            <a class="item" href="https://www.fit.edu/privacy">Privacy Policy</a>
+          </li>
+          <li>
+            <a class="item" href="https://www.fit.edu/about/non-discrimination-and-accessibility/">Non-Discrimination & Accessibility</a>
+          </li>
+          <li>
+            <a class="item" href="https://www.fit.edu/title-ix">Title IX</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="copyright" class="ui two column grid">
+      <div class="right aligned column">
+        <a href="https://map.fit.edu/">Campus Map</a> | <a href="https://www.fit.edu/sitemap/">Sitemap</a>
+      </div>
+      <div class="left aligned column">
+        © Florida Institute of Technology. 
+        <div id="edit-button">
+          
+        </div>
+      </div>
+
+    </div>
+
+    </footer>
+
+
+
+
+  <!-- JS Files -->
+  <script src='/media/fit-website/site-assets/javascript/homepage.js'></script><!--Main Site JS !!!!! REVISIT !!!! -->
+  <!-- JS for Utility, Main, & Mobile Nav -->
+<script src="/media/fit-website/site-assets/javascript/a11yNav.js"></script><!--Accessibility Navigation-->
+
+
+
+  <!--SWIFTYPE CODE-->          
+  <script>
+     (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+       (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+       e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+       })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+       _st('install','NCdkzkySENNYrNyCzwvW','2.0.0');
+    </script>
+
+  <script>
+
+    
+     	
+$(document).ready(function() {
+	$( ".t4Edit-page" ).appendTo( "#edit-button" );
+});
+
+  </script>
+
+
+  <!--TEMP JS-->
+  <script>
+
+    $('#primary-menu ul li').click(function(){
+    $('li').not(this).removeClass("active");
+    $(this).toggleClass("active");
+    });
+
+    $(main).not('li').click(function(){
+    $('li').removeClass("active");
+    });
+
+    $('.s-button').click( function() {
+    //if($('li.s-button').hasClass('active')){
+    //    $("#search-area").removeClass("disabled");
+    //    $("#search-area input").focus();
+    //} else {
+    //   $("#search-area").addClass("disabled");
+    //}
+
+    $("#search-area").toggleClass("disabled");
+    $("#search-area input").focus();
+    });
+
+    $('#responsive-menu-button i').click(function(){
+    $('#top-navigation').toggleClass("active");
+    $('#responsive-menu-button i').toggleClass("active");
+    });
+    
+    $('#responsive-sub-menu-button').click(function(){
+    $('.sub-nav ul').toggleClass("active");
+    $('#responsive-sub-menu-button i').toggleClass("active");
+    });
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    $(window).scroll(function() {
+    	if (document.body.scrollTop > 120 || document.documentElement.scrollTop > 120){
+    		$('header').addClass('sticky');
+    	}
+    	else{
+    		$('header').removeClass('sticky');
+    	}
+    });
+
+  </script>
+
+
+
+
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="t4Edit-page" href="https://t4.fit.edu/terminalfour/page/directEdit#edit/52/en/22258"><span class='visuallyhidden'>Edit Page</span> <i class='paw icon'></i></a>
