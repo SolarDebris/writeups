@@ -1,0 +1,13 @@
+#+title: Advanced ROP Writeups
+#+author: SolarDebris (Alex Schmith)
+#+description: Writeups for advanced rop challenges.
+#+date:<2023-01-24 Tue>
+
+
+* JOP
+For this set of challenges we have almost no useful ropgadgets that we can use,
+we only have syscall. There is also no __libc_csu_init that we can do a ret2csu in.
+There are only jmp gadgets.
+
+#+begin_src
+#+end_src
