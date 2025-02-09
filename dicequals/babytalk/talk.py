@@ -6,8 +6,7 @@ context.update(
         endian="little",
         log_level="debug",
         os="linux",
-        #terminal=["tmux", "split-window", "-h", "-p 65"]
-        terminal=["st"]
+        terminal=["alacritty","-e"]
 )
 to = 2
 
