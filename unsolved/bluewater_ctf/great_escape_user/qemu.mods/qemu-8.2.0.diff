@@ -1,0 +1,90 @@
+diff --color -aur qemu-8.2.0/hw/arm/virt.c qemu-8.2.0-patched/hw/arm/virt.c
+--- qemu-8.2.0/hw/arm/virt.c	2023-12-19 22:24:34.000000000 +0100
++++ qemu-8.2.0-patched/hw/arm/virt.c	2024-05-25 09:51:45.943761308 +0200
+@@ -157,6 +157,7 @@
+     [VIRT_PVTIME] =             { 0x090a0000, 0x00010000 },
+     [VIRT_SECURE_GPIO] =        { 0x090b0000, 0x00001000 },
+     [VIRT_MMIO] =               { 0x0a000000, 0x00000200 },
++    [VIRT_LZ4DEV] =             { 0x0b000000, 0x00000200 },
+     /* ...repeating for a total of NUM_VIRTIO_TRANSPORTS, each of that size */
+     [VIRT_PLATFORM_BUS] =       { 0x0c000000, 0x02000000 },
+     [VIRT_SECURE_MEM] =         { 0x0e000000, 0x01000000 },
+@@ -202,6 +203,7 @@
+     [VIRT_GIC_V2M] = 48, /* ...to 48 + NUM_GICV2M_SPIS - 1 */
+     [VIRT_SMMU] = 74,    /* ...to 74 + NUM_SMMU_IRQS - 1 */
+     [VIRT_PLATFORM_BUS] = 112, /* ...to 112 + PLATFORM_BUS_NUM_IRQS -1 */
++    [VIRT_LZ4DEV] = 112 + PLATFORM_BUS_NUM_IRQS,
+ };
+ 
+ static const char *valid_cpus[] = {
+@@ -1116,6 +1118,38 @@
+     }
+ }
+ 
++static void create_virt_lz4dev_device(const VirtMachineState *vms)
++{
++    MachineState *ms = MACHINE(vms);
++    hwaddr base = vms->memmap[VIRT_LZ4DEV].base;
++    hwaddr size = vms->memmap[VIRT_LZ4DEV].size;
++    int irq = vms->irqmap[VIRT_LZ4DEV];
++    char *nodename;
++
++    /*
++     * virt-lz4dev@0b000000 {
++     *         compatible = "virt-lz4dev";
++     *         reg = <0x0b000000 0x200>;
++     *         interrupt-parent = <&gic>;
++     *         interrupts = <176>;
++     * }
++     */
++
++    sysbus_create_simple("virt-lz4dev", base, qdev_get_gpio_in(vms->gic, irq));
++
++    nodename = g_strdup_printf("/virt_lz4dev@%" PRIx64, base);
++    qemu_fdt_add_subnode(ms->fdt, nodename);
++    qemu_fdt_setprop_string(ms->fdt, nodename, "compatible", "virt-lz4dev");
++    qemu_fdt_setprop_sized_cells(ms->fdt, nodename, "reg", 2, base, 2, size);
++    qemu_fdt_setprop_cells(ms->fdt, nodename, "interrupt-parent",
++                           vms->gic_phandle);
++    qemu_fdt_setprop_cells(ms->fdt, nodename, "interrupts",
++                           GIC_FDT_IRQ_TYPE_SPI, irq,
++                           GIC_FDT_IRQ_FLAGS_LEVEL_HI);
++
++    g_free(nodename);
++}
++
+ #define VIRT_FLASH_SECTOR_SIZE (256 * KiB)
+ 
+ static PFlashCFI01 *virt_flash_create1(VirtMachineState *vms,
+@@ -2308,6 +2342,7 @@
+      * no backend is created the transport will just sit harmlessly idle.
+      */
+     create_virtio_devices(vms);
++    create_virt_lz4dev_device(vms);
+ 
+     vms->fw_cfg = create_fw_cfg(vms, &address_space_memory);
+     rom_set_fw(vms->fw_cfg);
+Seulement dans qemu-8.2.0-patched/hw/misc: lz4dec_x86_64.s
+diff --color -aur qemu-8.2.0/hw/misc/meson.build qemu-8.2.0-patched/hw/misc/meson.build
+--- qemu-8.2.0/hw/misc/meson.build	2023-12-19 22:24:34.000000000 +0100
++++ qemu-8.2.0-patched/hw/misc/meson.build	2023-12-31 03:52:01.645221730 +0100
+@@ -1,5 +1,7 @@
+ system_ss.add(when: 'CONFIG_APPLESMC', if_true: files('applesmc.c'))
+ system_ss.add(when: 'CONFIG_EDU', if_true: files('edu.c'))
++system_ss.add(files('virt_lz4dev.c'))
++system_ss.add(files('lz4dec_x86_64.s'))
+ system_ss.add(when: 'CONFIG_FW_CFG_DMA', if_true: files('vmcoreinfo.c'))
+ system_ss.add(when: 'CONFIG_ISA_DEBUG', if_true: files('debugexit.c'))
+ system_ss.add(when: 'CONFIG_ISA_TESTDEV', if_true: files('pc-testdev.c'))
+Seulement dans qemu-8.2.0-patched/hw/misc: virt_lz4dev.c
+diff --color -aur qemu-8.2.0/include/hw/arm/virt.h qemu-8.2.0-patched/include/hw/arm/virt.h
+--- qemu-8.2.0/include/hw/arm/virt.h	2023-12-19 22:24:34.000000000 +0100
++++ qemu-8.2.0-patched/include/hw/arm/virt.h	2023-12-31 05:00:08.097627518 +0100
+@@ -76,6 +76,7 @@
+     VIRT_ACPI_GED,
+     VIRT_NVDIMM_ACPI,
+     VIRT_PVTIME,
++    VIRT_LZ4DEV,
+     VIRT_LOWMEMMAP_LAST,
+ };
+ 
