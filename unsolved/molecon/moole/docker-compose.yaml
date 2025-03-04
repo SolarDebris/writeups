@@ -1,0 +1,17 @@
+services:
+  chall:
+    image: cybersecnatlab/challenge-jail
+    restart: unless-stopped
+    init: true
+    privileged: true
+    ports:
+      - '808:1337'
+    volumes:
+      - './moole:/home/user/chall:ro' # Challenge executable
+      - './mool:/home/user/mool:ro'  
+      - './flag.txt:/home/user/flag.txt:ro' 
+    # Optional custom command line (default: ["/home/user/chall"])
+    command: ["/home/user/chall"]
+    environment:
+      - 'TIMEOUT=60'                             # default: 60
+      - 'TEMPDIRS=/tmp'

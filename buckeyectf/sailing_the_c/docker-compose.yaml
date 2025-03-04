@@ -1,6 +1,0 @@
-services:
-  app:
-    build: .
-    ports:
-      - 1024:1024
-    privileged: true
