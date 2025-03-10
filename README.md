@@ -1,6 +1,37 @@
 # writeups
 A collection of writeups for challenges that I've done that I thought were interesting
 
+| Challenge  | Type |
+|----------- |------|
+| [No Handouts](buckeyectf_2024/no_handouts)| ret2libc, Seccomp |
+| [Sailing The Sea](buckeyectf_2024/sailing_the_sea) | Read What Where |
+| [Spaceman](buckeyectf_2024/spaceman) | RiscV ROP |
+| [vip](csaw_2024/vip) | whitelist |
+| [bop](dice_2023/bop) | seccomp ret2libc |
+| [babyqemu](hitb-gsec-2017/babyqemu_upsolved) | QEMU Escape |
+| [typop](idek_2023/typop) | FULL Green ROP Ret2CSU |
+| [checksumz](irisctf_2025/checksumz_upsolved) | Linux Kernel Modprobe Path |
+| [sus](lactf_2024/sus) | ret2libc |
+| [flightscript](patriotctf_2024/flightscript) | heap largebins attack |
+| [not another vm](patriotctf_2024/not_another_vm) | vm flag checker |
+| [shellcrunch](patriotctf_2024/shellcrunch) | restricted shellcoding |
+| [babyheap](pwncon/babyheap) | house of botcake |
+| [lightftp](realworld_2023/lightftp) | race condition |
+| [nolibc](sekai_2024/nolibc) | custom heap |
+| [fallingrop](spaceheroes_2024/fallingrop) | ret2system |
+| [fsop](spaceheroes_2024/fsop) | fsop |
+| [helldivers](spaceheroes_2024/helldive) | custom canary, house of spirit |
+| [mindmeld](spaceheroes_2024/mindmeld) | srop, ptrace |
+| [ctf-simulator](sunshine_2022/simulator) | srand |
+| [house-of-sus](sunshine_2023/house_of_sus) | house of force |
+| [flock-of-birds](sunshine_2023/flock-of-birds) | custom canary |
+| [heap01](sunshine_2024/heap01) | tcache per thread struct |
+| [jungle](sunshine_2024/jungle) | tcache pointer mangling |
+| [secure](sunshine_2024/secure) | house of force, seccomp |
+| [321](sunshine_2024/321) | speed pwn |
+| [pointers](tamuctf/pointers) | stack variable bof |
+| [seashells](tamuctf/seashells) | shellcode |
+
 
 
 ## PWN Tricks

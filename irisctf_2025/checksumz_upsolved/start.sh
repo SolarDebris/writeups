@@ -6,7 +6,8 @@ kernel="$(realpath ./artifacts/bzImage)"
 initramfs="$(realpath ./artifacts/initramfs.cpio.gz)"
 flag="$(realpath ./flag)"
 
-cmdline="oops=panic panic=1 console=ttyS0 $chall_specific_parameters"
+#cmdline="oops=panic panic=1 console=ttyS0 $chall_specific_parameters"
+cmdline="oops=panic panic=1 console=ttyS0"
 qemu_args=()
 debug=0
 

