@@ -1,0 +1,5 @@
+here are the list of tools that'll ensure that we win every ctf
+- rsactftool
+- flag begging
+- steghide
+- vibes
